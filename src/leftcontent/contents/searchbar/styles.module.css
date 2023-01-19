@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  transition: 0.5s ease-in-out;
+  position: relative;
+}
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  column-gap: 4rem;
+  align-items: center;
+}
+.back {
+  font-size: 3rem;
+  color: white;
+  text-shadow: none;
+}
+.back:hover {
+  cursor: pointer;
+  text-shadow: rgb(171, 195, 207) 5px 0 10px;
+}
+.input {
+  background-color: transparent;
+  height: 3rem;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+
+  letter-spacing: 0.3rem;
+}
+.commentDiv {
+  color: white;
+
+  display: flex;
+  align-items: center;
+}
+.comment {
+  color: white;
+
+  font-size: 1rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+}
+.link {
+  color: rgb(86, 86, 240);
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  font-weight: bold;
+}
+.link:hover {
+  cursor: pointer;
+  text-shadow: rgb(171, 195, 207) 1px 1px 1px;
+}
+.searchButton {
+  position: absolute;
+  right: 5%;
+  color: white;
+  font-size: 1.2rem;
+}
+.searchButton:hover {
+  cursor: pointer;
+  padding-bottom: 2px;
+}
+.searchButton:active {
+  padding-bottom: 0px;
+}

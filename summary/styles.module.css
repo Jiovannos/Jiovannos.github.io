@@ -1,0 +1,12 @@
+.summary {
+  color: white;
+  /* font-family: Roboto; */
+  font-size: 1.2rem;
+  text-align: left;
+  letter-spacing: 0.1rem;
+  text-shadow: rgb(58, 19, 231) 1px 0 1px;
+}
+.mention {
+  text-align: right;
+  font-size: 1rem;
+}

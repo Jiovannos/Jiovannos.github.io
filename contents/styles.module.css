@@ -1,0 +1,9 @@
+.container {
+  position: fixed !important;
+  top: 5%;
+  left: 5%;
+  z-index: 1;
+  width: 600px;
+  width: 100%;
+  height: fit-content;
+}

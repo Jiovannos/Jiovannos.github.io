@@ -1,0 +1,9 @@
+.title {
+  color: white;
+  font-size: 3rem;
+  text-align: left;
+  letter-spacing: 0.4rem;
+  transform: scale(1, 1.2);
+  font-weight: lighter;
+  margin-top: 0;
+}
