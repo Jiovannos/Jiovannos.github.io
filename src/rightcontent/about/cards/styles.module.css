@@ -24,6 +24,7 @@
   font-weight: 100;
   margin-top: 0;
   text-align: left;
+  /* color: rgb(206, 189, 95); */
 }
 .section {
   display: flex;
@@ -72,13 +73,16 @@
   z-index: 2;
   top: 1%;
   right: 1%;
-  background-color: rgb(231, 76, 37);
+  background-color: rgb(50, 89, 218);
   border-radius: 10%;
   width: 2rem;
   height: 2rem;
   font-size: 1.3rem;
 }
 .xButton:hover {
-  background-color: rgb(218, 50, 50);
   cursor: pointer;
+}
+.bold {
+  font-weight: 400;
+  color: rgb(171, 188, 245);
 }

@@ -22,7 +22,7 @@ export default function About(props) {
       })
     );
     dispatch(
-      setPosition({ category: "about", position: { x: -5, y: 0, z: -8 } })
+      setPosition({ category: "about", position: { x: -2, y: 0, z: -8 } })
     );
   };
 
@@ -39,12 +39,18 @@ export default function About(props) {
         className={css.category}
         onClick={() => {
           openCard();
-          navigate("/");
+          navigate("/Bio");
         }}
       >
         Bio
       </li>
-      <li className={css.category} onClick={openCard}>
+      <li
+        className={css.category}
+        onClick={() => {
+          openCard();
+          navigate("/Career");
+        }}
+      >
         Career
       </li>
     </div>

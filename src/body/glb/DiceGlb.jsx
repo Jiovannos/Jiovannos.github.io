@@ -1,12 +1,5 @@
-import React from "react";
-// import css from "./styles.module.css";
-import TriangleSide from "../sides2d/TriangleSide";
-import { useRef, useState, useEffect } from "react";
-import { useFrame, useLoader, useThree } from "@react-three/fiber";
-import * as THREE from "three";
-import { TextureLoader } from "three/src/loaders/TextureLoader";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { FBXLoader } from "three-stdlib";
+import React, { useRef, useState, useEffect } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 
 export default function DiceGlb(props) {
@@ -18,10 +11,12 @@ export default function DiceGlb(props) {
     newPos: { x: 0, y: 0, z: 0 },
   });
 
+  // If Focused is true, the object will rotate to the rot position
   const focused = props.focused ? props.focused : false;
   const rot = props.rot ? props.rot : { x: 0, y: 0, z: 0 };
   const zoom = props.zoom ? props.zoom : 1;
 
+  // A function to make a smoother linear interpolation of a position or rotation
   function lerp(start, target, factor) {
     start.x = start.x + (target.x - start.x) * factor;
     start.y = start.y + (target.y - start.y) * factor;
@@ -32,6 +27,7 @@ export default function DiceGlb(props) {
     setPos({ change: true, newPos: props.newPosition });
   }, [props.newPosition]);
 
+  // This writes the component into the scene's render loop
   useFrame((state, delta) => {
     if (ref.current.rotation.x > 6.28) {
       ref.current.rotation.x = 0;
@@ -45,21 +41,21 @@ export default function DiceGlb(props) {
     ref.current.rotation.x += delta / 6;
     ref.current.rotation.y += delta / 6;
     ref.current.rotation.z += delta / 6;
-
     threeState.camera.zoom = zoom;
     if (pos.change) {
       [ref.current.position.x, ref.current.position.y, ref.current.position.z] =
         lerp(ref.current.position, pos.newPos, 0.02);
     }
-
     if (focused) {
       [ref.current.rotation.x, ref.current.rotation.y, ref.current.rotation.z] =
         lerp(ref.current.rotation, rot, 0.1);
     }
   });
-  const { nodes, materials } = useGLTF("dices.glb");
+  // Loads the model from the .glb file
+  const { nodes, materials } = useGLTF("dice.glb");
   let geometry;
   let material;
+  // Chooses the geometry and material from the .glb model based on the number of sides
   const sidesToGlb = {
     4: {
       geometry: nodes.Object_4.geometry,

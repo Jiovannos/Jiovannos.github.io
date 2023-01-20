@@ -40,14 +40,13 @@ export default function PortfolioCard(props) {
         <div className={css.section}>
           <div className={css.lowerTitle}>Challenges:</div>
           <div className={css.description}>
-            It was the first time dealing with 3D animation. Dice were created
-            face by face, for utility reasons, thus calculating geometry plus
-            nessecary rotations was a bit tricky.
+            It was the first time dealing with 3D animation. Calculating
+            geometry plus nessecary rotations of the planes was a bit tricky.
           </div>
         </div>
         <div className={css.section}>
           <div className={css.lowerTitle}>Sample Code:</div>
-          <div className={css.description}>D20.jsx</div>
+          <div className={css.description}>DiceGlb.jsx</div>
         </div>
         <div className={css.code}>
           <div className={css.codeBlock}>
