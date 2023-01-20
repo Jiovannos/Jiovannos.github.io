@@ -1,33 +1,16 @@
-/* .container {
-  position: fixed !important;
-  top: 5%;
-  left: 5%;
-  z-index: 1;
-  width: 25vw;
-  min-width: 500px;
-  height: 100vh;
-  overflow-y: scroll;
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
-}
-::-webkit-scrollbar {
-  width: 0; 
-  background: transparent; 
-}
-
-::-webkit-scrollbar-thumb {
-  background: #ff0000;
-} */
 .container {
   position: fixed !important;
   top: 5%;
   right: 5%;
+
   display: flex;
   justify-content: center;
   margin: 2rem 0;
   z-index: 1;
   transition: visibility 1s ease-in-out, opacity 1s ease-in-out;
+  /* white-space: nowrap; */
 }
+
 .card {
   text-align: center;
   padding: 1em 3em;
@@ -45,8 +28,17 @@
   user-select: none;
   -webkit--user-select: none;
   touch-action: manipulation;
+  /* overflow-y: scroll; */
+  /* height: 100%; */
 }
-
+@media only screen and (max-width: 1026px) {
+  .container {
+    left: 5%;
+  }
+  .card {
+    width: 80vw;
+  }
+}
 .card:before {
   content: "hello";
   background: linear-gradient(
