@@ -8,13 +8,12 @@
 }
 .category {
   color: white;
-
   font-size: 1.5rem;
   text-align: left;
   letter-spacing: 0.2rem;
-  text-shadow: rgb(171, 195, 207) 1px 0 7px;
   font-weight: 100;
-  opacity: 0.7;
+  opacity: 1;
+  text-shadow: rgb(5, 5, 5) 3px 0px 1px;
 }
 .category:hover {
   text-shadow: rgb(227, 235, 240) 1px 5px 10px;

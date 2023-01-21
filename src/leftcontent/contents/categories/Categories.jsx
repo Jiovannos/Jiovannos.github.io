@@ -6,18 +6,19 @@ import {
   setFocus,
   setPosition,
   setVisibility,
-  rotatePosition,
+  checkUrl,
 } from "../../../redux/spaceSlice";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export default function Categories(props) {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const spaceState = useSelector((state) => state.space);
   const contentsState = spaceState.contents;
   function handleRotation(cat) {
     dispatch(rotateContents(cat));
   }
-  const [clicked, setClicked] = useState("noCat");
   const openCard = () => {
     dispatch(
       setVisibility({
@@ -26,24 +27,10 @@ export default function Categories(props) {
         opacity: 1,
       })
     );
-    dispatch(
-      setPosition({ category: "contents", position: { x: -2, y: 0, z: -8 } })
-    );
   };
-
-  const toggleCategory = (cat) => {
-    dispatch(
-      setVisibility({ category: cat, visibility: "visible", opacity: 1 })
-    );
-    dispatch(
-      setVisibility({ category: "contents", visibility: "hidden", opacity: 0 })
-    );
-  };
-
-  const goToCategory = (cat) => {
-    dispatch(rotatePosition({ rotateTo: cat }));
-  };
-
+  useEffect(() => {
+    dispatch(checkUrl());
+  }, [window.location.pathname]);
   return (
     <div
       className={css.categories}
@@ -63,8 +50,7 @@ export default function Categories(props) {
           dispatch(setFocus({ category: "contents", focused: false }));
         }}
         onClick={() => {
-          goToCategory("about");
-          toggleCategory("about");
+          navigate("/about");
         }}
       >
         About
@@ -80,8 +66,7 @@ export default function Categories(props) {
           dispatch(setFocus({ category: "contents", focused: false }));
         }}
         onClick={() => {
-          goToCategory("stacks");
-          toggleCategory("stacks");
+          navigate("/stacks");
         }}
       >
         Stacks
@@ -97,8 +82,7 @@ export default function Categories(props) {
           dispatch(setFocus({ category: "contents", focused: false }));
         }}
         onClick={() => {
-          goToCategory("projects");
-          toggleCategory("projects");
+          navigate("/projects");
         }}
       >
         Projects

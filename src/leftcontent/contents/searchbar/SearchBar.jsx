@@ -2,6 +2,7 @@ import React from "react";
 import css from "./styles.module.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { checkUrl } from "../../../redux/spaceSlice";
 import { setVisibility, rotatePosition } from "../../../redux/spaceSlice";
 import { filterProjects } from "../../../redux/searchSlice";
 import { useNavigate } from "react-router";
@@ -19,66 +20,24 @@ export default function SearchBar(props) {
 
   const dispatch = useDispatch();
   const goBack = () => {
-    if (spaceState.card.visibility === "hidden") {
-      dispatch(
-        setVisibility({
-          category: "contents",
-          visibility: "visible",
-          opacity: 1,
-        })
-      );
-      dispatch(
-        setVisibility({
-          category: "projects",
-          visibility: "hidden",
-          opacity: 0,
-        })
-      );
-      dispatch(
-        setVisibility({ category: "stacks", visibility: "hidden", opacity: 0 })
-      );
-      dispatch(
-        setVisibility({ category: "about", visibility: "hidden", opacity: 0 })
-      );
-      dispatch(rotatePosition({ rotateTo: "contents" }));
-      navigate("/");
-      setValue("");
-    } else if (spaceState.projects.visibility === "visible") {
-      dispatch(rotatePosition({ rotateTo: "projects" }));
-    } else if (spaceState.stacks.visibility === "visible") {
-      dispatch(rotatePosition({ rotateTo: "stacks" }));
-    } else if (spaceState.about.visibility === "visible") {
-      dispatch(rotatePosition({ rotateTo: "about" }));
-    } else if (spaceState.about.contents === "visible") {
-      dispatch(rotatePosition({ rotateTo: "contents" }));
-    }
-
-    dispatch(
-      setVisibility({
-        category: "card",
-        visibility: "hidden",
-        opacity: 0,
-      })
+    // dispatch(checkUrl());
+    let previousLevel = window.location.pathname.substring(
+      0,
+      window.location.pathname.lastIndexOf("/")
     );
+    navigate(previousLevel);
   };
+
   const handleKeyEnter = (event) => {
     if (event.key === "Enter") {
       dispatch(filterProjects(value));
       goToProjects();
     }
   };
-  const toggleCategory = (cat) => {
-    dispatch(
-      setVisibility({ category: cat, visibility: "visible", opacity: 1 })
-    );
-    dispatch(
-      setVisibility({ category: "contents", visibility: "hidden", opacity: 0 })
-    );
-  };
+
   const goToProjects = () => {
     if (value !== "") {
-      dispatch(rotatePosition({ rotateTo: "projects" }));
-      toggleCategory("projects");
+      navigate("/projects");
     }
   };
   return (

@@ -6,7 +6,7 @@ import { DoubleSide } from "three";
 
 export default function Background(props) {
   const ref = useRef();
-  const texture = useLoader(TextureLoader, "pexels-david-selbert-6468238.jpg");
+  const texture = useLoader(TextureLoader, "/pexels-david-selbert-6468238.jpg");
   texture.repeat.set(1, 1);
 
   return (

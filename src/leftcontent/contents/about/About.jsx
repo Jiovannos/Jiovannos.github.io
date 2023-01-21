@@ -1,18 +1,18 @@
 import React from "react";
 import css from "./styles.module.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useEffect, useMemo } from "react";
+import { useDispatch } from "react-redux";
 import {
-  rotateContents,
   setPosition,
   setVisibility,
+  checkUrl,
 } from "../../../redux/spaceSlice";
 import { useNavigate } from "react-router";
 
 export default function About(props) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const spaceState = useSelector((state) => state.space);
-  const aboutState = spaceState.about;
+
   const openCard = () => {
     dispatch(
       setVisibility({
@@ -21,25 +21,19 @@ export default function About(props) {
         opacity: 1,
       })
     );
-    dispatch(
-      setPosition({ category: "about", position: { x: -2, y: 0, z: -8 } })
-    );
   };
 
+  useEffect(() => {
+    dispatch(checkUrl());
+  }, [window.location.pathname]);
   return (
-    <div
-      className={css.categories}
-      style={{
-        visibility: aboutState.visibility,
-        opacity: aboutState.opacity,
-      }}
-    >
+    <div className={css.categories}>
       <h1 className={css.title}>About</h1>
       <li
         className={css.category}
         onClick={() => {
           openCard();
-          navigate("/Bio");
+          navigate("/about/bio");
         }}
       >
         Bio
@@ -48,7 +42,7 @@ export default function About(props) {
         className={css.category}
         onClick={() => {
           openCard();
-          navigate("/Career");
+          navigate("/about/career");
         }}
       >
         Career

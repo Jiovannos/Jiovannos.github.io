@@ -5,6 +5,7 @@ import PortfolioCard from "./projects/cards/PortfolioCard";
 import CareerCard from "./about/cards/CareerCard";
 import BioCard from "./about/cards/BioCard";
 import { Routes, Route } from "react-router-dom";
+import Categories from "../leftcontent/contents/categories/Categories";
 
 export default function Right() {
   const spaceState = useSelector((state) => state.space);
@@ -16,9 +17,10 @@ export default function Right() {
     >
       <div className={css.card}>
         <Routes>
-          <Route path="Portfolio" element={<PortfolioCard />} />
-          <Route path="Bio" element={<BioCard />} />
-          <Route path="Career" element={<CareerCard />} />
+          <Route path="/projects/portfolio" element={<PortfolioCard />} />
+          <Route path="/about/bio" element={<BioCard />} />
+          <Route path="/about/career" element={<CareerCard />} />
+          <Route path="*" element={<div />} />
         </Routes>
       </div>
     </div>

@@ -1,10 +1,11 @@
 import React from "react";
+import { useEffect, useMemo } from "react";
 import css from "./styles.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  rotateContents,
   setPosition,
   setVisibility,
+  checkUrl,
 } from "../../../redux/spaceSlice";
 // import Contents from "../Contents";
 // import { useState } from "react";
@@ -21,19 +22,14 @@ export default function Stacks(props) {
         opacity: 1,
       })
     );
-    dispatch(
-      setPosition({ category: "stacks", position: { x: -2, y: 0, z: -8 } })
-    );
   };
 
+  useEffect(() => {
+    dispatch(checkUrl());
+  }, [window.location.pathname]);
+
   return (
-    <div
-      className={css.categories}
-      style={{
-        visibility: stacksState.visibility,
-        opacity: stacksState.opacity,
-      }}
-    >
+    <div className={css.categories}>
       <h1 className={css.title} onClick={openCard}>
         Stacks
       </h1>

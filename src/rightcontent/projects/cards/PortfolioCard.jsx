@@ -7,14 +7,18 @@ import { CopyBlock, dracula } from "react-code-blocks";
 import { useNavigate } from "react-router";
 
 export default function PortfolioCard(props) {
+  const [display, setDisplay] = React.useState("none");
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const closeCard = () => {
-    dispatch(
-      setVisibility({ category: "card", visibility: "hidden", opacity: 0 })
-    );
-    dispatch(rotatePosition({ rotateTo: "projects" }));
-    navigate("/");
+    navigate("/projects");
+  };
+  const toggleCode = () => {
+    if (display === "none") {
+      setDisplay("flex");
+    } else {
+      setDisplay("none");
+    }
   };
   return (
     <>
@@ -38,17 +42,18 @@ export default function PortfolioCard(props) {
           the enviromental factors contributing to a person't skills.
         </p>
         <div className={css.section}>
-          <div className={css.lowerTitle}>Challenges:</div>
+          {/* <div className={css.lowerTitle}>Challenges:</div> */}
           <div className={css.description}>
+            <b>Challenges: </b>
             It was the first time dealing with 3D animation. Calculating
             geometry plus nessecary rotations of the planes was a bit tricky.
           </div>
         </div>
-        <div className={css.section}>
-          <div className={css.lowerTitle}>Sample Code:</div>
-          <div className={css.description}>DiceGlb.jsx</div>
+        <div className={css.showCode} onClick={toggleCode}>
+          Show Sample Code
         </div>
-        <div className={css.code}>
+        <div className={css.code} style={{ display: display }}>
+          <div className={css.lowerTitle}>DiceGlb.jsx</div>
           <div className={css.codeBlock}>
             <CopyBlock
               text={myText}
@@ -61,15 +66,15 @@ export default function PortfolioCard(props) {
             />
           </div>
         </div>
-      </div>
-      <div className={css.hashTags}>
-        <div className={css.tag}>#JavaScript</div>
-        <div className={css.tag}>#React</div>
-        <div className={css.tag}>#Three.js</div>
-        <div className={css.tag}>#HTML</div>
-        <div className={css.tag}>#CSS</div>
-        <div className={css.tag}>#3DAnimation</div>
-        <div className={css.tag}>#Redux</div>
+        <div className={css.hashTags}>
+          <div className={css.tag}>#JavaScript</div>
+          <div className={css.tag}>#React</div>
+          <div className={css.tag}>#Three.js</div>
+          <div className={css.tag}>#HTML</div>
+          <div className={css.tag}>#CSS</div>
+          <div className={css.tag}>#3DAnimation</div>
+          <div className={css.tag}>#Redux</div>
+        </div>
       </div>
     </>
   );

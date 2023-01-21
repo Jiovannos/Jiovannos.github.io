@@ -52,7 +52,7 @@ export default function Coin(props) {
         lerp(ref.current.rotation, rot, 0.1);
     }
   });
-  const { nodes, materials } = useGLTF("stylized_pirate_coin.glb");
+  const { nodes, materials } = useGLTF("/stylized_pirate_coin.glb");
   let geometry;
   let material;
 

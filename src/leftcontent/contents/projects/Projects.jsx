@@ -1,10 +1,11 @@
 import React from "react";
 import css from "./styles.module.css";
+import { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  rotateContents,
   setPosition,
   setVisibility,
+  checkUrl,
 } from "../../../redux/spaceSlice";
 import { useNavigate } from "react-router";
 
@@ -23,26 +24,20 @@ export default function Projects(props) {
         opacity: 1,
       })
     );
-    dispatch(
-      setPosition({ category: "projects", position: { x: -2, y: 0, z: -8 } })
-    );
   };
-  console.log(visible);
+
+  useEffect(() => {
+    dispatch(checkUrl());
+  }, [window.location.pathname]);
 
   return (
-    <div
-      className={css.categories}
-      style={{
-        visibility: projectsState.visibility,
-        opacity: projectsState.opacity,
-      }}
-    >
+    <div className={css.categories}>
       <h1 className={css.title}>Projects</h1>
       <li
         className={css.category}
         onClick={() => {
           openCard();
-          navigate("/Portfolio");
+          navigate("/projects/portfolio");
         }}
         style={{ display: visible.portfolio }}
       >

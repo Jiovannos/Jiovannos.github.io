@@ -1,18 +1,18 @@
 import React from "react";
 import css from "./styles.module.css";
 import { useDispatch } from "react-redux";
-import { setVisibility, rotatePosition } from "../../../redux/spaceSlice";
+import {
+  setVisibility,
+  rotatePosition,
+  checkUrl,
+} from "../../../redux/spaceSlice";
 import { useNavigate } from "react-router";
 
 export default function CareerCard(props) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const closeCard = () => {
-    dispatch(
-      setVisibility({ category: "card", visibility: "hidden", opacity: 0 })
-    );
-    dispatch(rotatePosition({ rotateTo: "about" }));
-    navigate("/");
+    navigate("/about");
   };
   return (
     <>

@@ -52,7 +52,7 @@ export default function DiceGlb(props) {
     }
   });
   // Loads the model from the .glb file
-  const { nodes, materials } = useGLTF("dice.glb");
+  const { nodes, materials } = useGLTF("/dice.glb");
   let geometry;
   let material;
   // Chooses the geometry and material from the .glb model based on the number of sides
