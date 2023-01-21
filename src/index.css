@@ -12,5 +12,5 @@ code {
     monospace;
 }
 ::-webkit-scrollbar-thumb {
-  background: gray;
+  background: transparent;
 }

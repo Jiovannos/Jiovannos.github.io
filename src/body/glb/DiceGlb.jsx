@@ -1,6 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
+import rotationHelper from "./rotationHelper";
+import * as THREE from "three";
+import { AxesHelper } from "three";
 
 export default function DiceGlb(props) {
   // This reference gives us direct access to the THREE.Mesh object
@@ -13,9 +16,18 @@ export default function DiceGlb(props) {
 
   // If Focused is true, the object will rotate to the rot position
   const focused = props.focused ? props.focused : false;
-  const rot = props.rot ? props.rot : { x: 0, y: 0, z: 0 };
-  const zoom = props.zoom ? props.zoom : 1;
+  if (props.focused) {
+    console.log(
+      props.rotSide,
+      props.sides,
+      rotationHelper[props.sides][props.rotSide]
+    );
+  }
 
+  const rot = props.focused
+    ? rotationHelper[props.sides][props.rotSide]
+    : { x: 0, y: 0, z: 0 };
+  const zoom = props.zoom ? props.zoom : 1;
   // A function to make a smoother linear interpolation of a position or rotation
   function lerp(start, target, factor) {
     start.x = start.x + (target.x - start.x) * factor;
@@ -51,6 +63,7 @@ export default function DiceGlb(props) {
         lerp(ref.current.rotation, rot, 0.1);
     }
   });
+
   // Loads the model from the .glb file
   const { nodes, materials } = useGLTF("/dice.glb");
   let geometry;
@@ -85,6 +98,8 @@ export default function DiceGlb(props) {
   geometry = sidesToGlb[props.sides].geometry;
   material = sidesToGlb[props.sides].material;
   geometry.center();
+  let Axes = new THREE.AxesHelper(1);
+  Axes.position.set(0, 0, -25);
   return (
     <mesh
       {...props}

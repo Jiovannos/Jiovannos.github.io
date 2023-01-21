@@ -19,15 +19,7 @@ export default function Categories(props) {
   function handleRotation(cat) {
     dispatch(rotateContents(cat));
   }
-  const openCard = () => {
-    dispatch(
-      setVisibility({
-        category: "card",
-        visibility: "visible",
-        opacity: 1,
-      })
-    );
-  };
+
   useEffect(() => {
     dispatch(checkUrl());
   }, [window.location.pathname]);
@@ -42,11 +34,10 @@ export default function Categories(props) {
       <li
         className={css.category}
         onMouseOver={() => {
-          handleRotation({ rotation: "about" });
           dispatch(setFocus({ category: "contents", focused: true }));
+          handleRotation({ category: "contents", rotation: 1 });
         }}
         onMouseLeave={() => {
-          handleRotation({ rotation: "about" });
           dispatch(setFocus({ category: "contents", focused: false }));
         }}
         onClick={() => {
@@ -58,11 +49,10 @@ export default function Categories(props) {
       <li
         className={css.category}
         onMouseOver={() => {
-          handleRotation({ rotation: "stacks" });
           dispatch(setFocus({ category: "contents", focused: true }));
+          handleRotation({ category: "contents", rotation: 2 });
         }}
         onMouseLeave={() => {
-          handleRotation({ rotation: "stacks" });
           dispatch(setFocus({ category: "contents", focused: false }));
         }}
         onClick={() => {
@@ -74,11 +64,10 @@ export default function Categories(props) {
       <li
         className={css.category}
         onMouseOver={() => {
-          handleRotation({ rotation: "projects" });
           dispatch(setFocus({ category: "contents", focused: true }));
+          handleRotation({ category: "contents", rotation: 3 });
         }}
         onMouseLeave={() => {
-          handleRotation({ rotation: "projects" });
           dispatch(setFocus({ category: "contents", focused: false }));
         }}
         onClick={() => {
@@ -90,15 +79,14 @@ export default function Categories(props) {
       <li
         className={css.category}
         onMouseOver={() => {
-          handleRotation({ rotation: "contact" });
           dispatch(setFocus({ category: "contents", focused: true }));
+          handleRotation({ category: "contents", rotation: 4 });
         }}
         onMouseLeave={() => {
-          handleRotation({ rotation: "contact" });
           dispatch(setFocus({ category: "contents", focused: false }));
         }}
         onClick={() => {
-          openCard();
+          navigate("/contact");
         }}
       >
         Contact

@@ -3,7 +3,12 @@ import css from "./styles.module.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { checkUrl } from "../../../redux/spaceSlice";
-import { setVisibility, rotatePosition } from "../../../redux/spaceSlice";
+import {
+  setVisibility,
+  rotatePosition,
+  rotateContents,
+  setFocus,
+} from "../../../redux/spaceSlice";
 import { filterProjects } from "../../../redux/searchSlice";
 import { useNavigate } from "react-router";
 import { SlMagnifier } from "react-icons/sl";
@@ -52,7 +57,14 @@ export default function SearchBar(props) {
         >
           <SlMagnifier />
         </div>
-        <div className={css.back} onClick={goBack}>
+        <div
+          className={css.back}
+          onClick={goBack}
+          onMouseOver={() => {
+            dispatch(rotateContents({ category: "projects", rotation: 0 }));
+            dispatch(setFocus({ category: "projects", focused: true }));
+          }}
+        >
           {"<"}
         </div>
         <input
@@ -70,6 +82,9 @@ export default function SearchBar(props) {
           className={css.link}
           onClick={() => {
             setValue("React");
+          }}
+          onMouseOver={() => {
+            dispatch(rotateContents({ rotation: "back" }));
           }}
         >
           #React

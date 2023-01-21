@@ -7,7 +7,7 @@
   z-index: 1;
   max-width: 500px;
   /* min-width: 500px; */
-  height: 100vh;
+  height: 95vh;
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */

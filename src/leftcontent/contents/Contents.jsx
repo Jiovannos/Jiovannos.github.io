@@ -16,6 +16,7 @@ export default function Contents(props) {
         <Route path="/about/*" element={<About />} />
         <Route path="/projects/*" element={<Projects />} />
         <Route path="/stacks/*" element={<Stacks />} />
+        <Route path="*" element={<Categories />} />
       </Routes>
     </div>
   );

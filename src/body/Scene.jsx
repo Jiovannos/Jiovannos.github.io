@@ -20,30 +20,30 @@ export default function Scene() {
       <Suspense fallback={null}>
         <ambientLight intensity={0.5} />
         <PerspectiveCamera makeDefault position={[0, 0, 0]} fov="20" />
-        <DiceGlb
+        {/* <DiceGlb
           name="stacksDie"
           sides={8}
           newPosition={stacksState.dicePosition}
           initialPosition={[-15, 0, 0]}
-          rot={stacksState.rotation}
+          rotSide={stacksState.rotation}
           focused={stacksState.focus}
           zoom={stacksState.zoom}
-        />
-        <DiceGlb
+        /> */}
+        {/* <DiceGlb
           name="contentsDie"
           sides={4}
           newPosition={contentsState.dicePosition}
           initialPosition={[0, 0, -25]}
-          rot={contentsState.rotation}
+          rotSide={contentsState.rotation}
           focused={contentsState.focus}
           zoom={contentsState.zoom}
-        />
+        /> */}
         <DiceGlb
           sides={12}
           name="projectsDie"
           newPosition={projectsState.dicePosition}
           initialPosition={[15, 0, 0]}
-          rot={projectsState.rotation}
+          rotSide={projectsState.rotation}
           focused={projectsState.focus}
           zoom={projectsState.zoom}
         />
@@ -52,7 +52,7 @@ export default function Scene() {
           // sides={12}
           newPosition={aboutState.dicePosition}
           initialPosition={[-15, 0, 0]}
-          rot={aboutState.rotation}
+          rotSide={aboutState.rotation}
           focused={aboutState.focus}
           zoom={aboutState.zoom}
         />
