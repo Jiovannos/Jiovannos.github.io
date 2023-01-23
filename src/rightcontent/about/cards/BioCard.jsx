@@ -24,16 +24,23 @@ export default function BioCard(props) {
         {/* <p className={css.shortDescription}>
           FrontEnd Web Application - React and Three.js.
         </p> */}
-        <p className={css.description}>
-          {" "}
-          <b className={css.bold}>Yannis</b> (Ioannis) is a{" "}
-          <b className={css.bold}>Programmer</b> and a{" "}
-          <b className={css.bold}>Civil Engineer</b> with a passion for creating
-          and a love for learning. He is a graduate of the University of
-          Thessaly, with a <b className={css.bold}>MSc in Civil Engineering</b>.
-          He worked as a civil engineer and later founded his own construction
-          company.
-        </p>
+        <div className={css.imgContainer}>
+          <img
+            src={"/profile.png"}
+            className={css.profile}
+            alt="jiovannos profile"
+          />
+          <p className={css.description}>
+            {" "}
+            <b className={css.bold}>Yannis</b> (Ioannis) is a{" "}
+            <b className={css.bold}>Programmer</b> and a{" "}
+            <b className={css.bold}>Civil Engineer</b> with a passion for
+            creating and a love for learning. He is a graduate of the University
+            of Thessaly, with a{" "}
+            <b className={css.bold}>MSc in Civil Engineering</b>. He worked as a
+            civil engineer and later founded his own construction company.
+          </p>
+        </div>
         <p className={css.description}>
           He started coding as a hobby but soon realized that it was his true
           vocation. So he changed his career path and now he is programming full

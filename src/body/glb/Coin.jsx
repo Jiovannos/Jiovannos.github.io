@@ -3,6 +3,7 @@ import React from "react";
 import { useRef, useState, useEffect } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
+import rotationHelper from "./rotationHelper";
 
 export default function Coin(props) {
   // This reference gives us direct access to the THREE.Mesh object
@@ -14,8 +15,11 @@ export default function Coin(props) {
   });
 
   const focused = props.focused ? props.focused : false;
-  const rot = props.rot ? props.rot : { x: 0, y: 0, z: 0 };
   const zoom = props.zoom ? props.zoom : 1;
+
+  const rot = props.focused
+    ? rotationHelper[props.sides][props.rotSide]
+    : { x: 0, y: 0, z: 0 };
 
   function lerp(start, target, factor) {
     start.x = start.x + (target.x - start.x) * factor;

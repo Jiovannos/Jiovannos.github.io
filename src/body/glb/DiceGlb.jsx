@@ -54,6 +54,14 @@ export default function DiceGlb(props) {
     ref.current.rotation.y += delta / 6;
     ref.current.rotation.z += delta / 6;
     threeState.camera.zoom = zoom;
+    // console.log(
+    //   "x",
+    //   ref.current.rotation.x,
+    //   "y",
+    //   ref.current.rotation.y,
+    //   "z",
+    //   ref.current.rotation.z
+    // );
     if (pos.change) {
       [ref.current.position.x, ref.current.position.y, ref.current.position.z] =
         lerp(ref.current.position, pos.newPos, 0.02);
@@ -63,7 +71,6 @@ export default function DiceGlb(props) {
         lerp(ref.current.rotation, rot, 0.1);
     }
   });
-
   // Loads the model from the .glb file
   const { nodes, materials } = useGLTF("/dice.glb");
   let geometry;

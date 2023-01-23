@@ -3,6 +3,7 @@
   flex-direction: column;
   height: 90%;
   overflow: scroll;
+  row-gap: 2rem;
 }
 .title {
   font-size: 3rem;
@@ -32,6 +33,7 @@
   flex-direction: row;
   column-gap: 1rem;
   text-align: left;
+  font-size: 1.2rem;
 }
 .lowerTitle {
   font-weight: bolder;
@@ -64,6 +66,7 @@
 }
 .link {
   color: rgb(206, 206, 233);
+  text-decoration: none;
 }
 .link:hover {
   color: rgb(255, 255, 255);
@@ -87,24 +90,8 @@
   font-weight: 400;
   color: rgb(171, 188, 245);
 }
-.profile {
-  display: flex;
-  flex-direction: row;
-  column-gap: 1rem;
-  margin-top: 1rem;
-  width: 150px;
-  height: 150px;
-  align-self: center;
-  justify-self: center;
-}
-.imgContainer {
-  display: flex;
-  flex-direction: row;
-  column-gap: 2rem;
-  align-items: center;
-}
-@media only screen and (max-width: 800px) {
-  .imgContainer {
-    flex-direction: column;
-  }
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
 }

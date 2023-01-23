@@ -2,7 +2,7 @@ import React from "react";
 import css from "./styles.module.css";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setVisibility, checkUrl } from "../../../redux/spaceSlice";
+import { checkUrl } from "../../../redux/spaceSlice";
 import { useNavigate } from "react-router";
 import { setFocus, rotateContents } from "../../../redux/spaceSlice";
 
@@ -12,7 +12,6 @@ export default function Projects(props) {
   const spaceState = useSelector((state) => state.space);
   const searchState = useSelector((state) => state.search);
   const visible = searchState.displayFields;
-  const projectsState = spaceState.projects;
 
   useEffect(() => {
     dispatch(checkUrl());
@@ -34,6 +33,7 @@ export default function Projects(props) {
         onClick={() => {
           navigate("/projects/portfolio");
         }}
+        style={{ display: visible.portfolio }}
       >
         Portfolio Project
       </li>
@@ -46,6 +46,7 @@ export default function Projects(props) {
         onClick={() => {
           navigate("/projects/saasplatform");
         }}
+        style={{ display: visible.saas }}
       >
         SaaS Platform
       </li>
@@ -62,6 +63,7 @@ export default function Projects(props) {
         onClick={() => {
           navigate("/projects/minnieandmaxx");
         }}
+        style={{ display: visible.minmax }}
       >
         Minnie and Maxx
       </li>
@@ -74,6 +76,7 @@ export default function Projects(props) {
         onClick={() => {
           navigate("/projects/minnieandmaxx");
         }}
+        style={{ display: visible.weight }}
       >
         Weight Tracker
       </li>
@@ -86,6 +89,7 @@ export default function Projects(props) {
         onClick={() => {
           navigate("/projects/minnieandmaxx");
         }}
+        style={{ display: visible.mtgScrapper }}
       >
         Magic Scrapper
       </li>
@@ -98,6 +102,7 @@ export default function Projects(props) {
         onClick={() => {
           navigate("/projects/eyemouse");
         }}
+        style={{ display: visible.eyeMouse }}
       >
         Eye Mouse
       </li>
@@ -114,6 +119,7 @@ export default function Projects(props) {
         onClick={() => {
           navigate("/projects/procurementanalysis");
         }}
+        style={{ display: visible.procurement }}
       >
         Procurement Analysis
       </li>
@@ -130,6 +136,7 @@ export default function Projects(props) {
         onClick={() => {
           navigate("/projects/chordcalculator");
         }}
+        style={{ display: visible.chords }}
       >
         Chord Calculator
       </li>
@@ -142,6 +149,7 @@ export default function Projects(props) {
         onClick={() => {
           navigate("/projects/bodypercussion");
         }}
+        style={{ display: visible.bodyPercussion }}
       >
         Body Percussion
       </li>
@@ -158,6 +166,7 @@ export default function Projects(props) {
         onClick={() => {
           navigate("/projects/bigfatdata");
         }}
+        style={{ display: visible.bigFatData }}
       >
         Big Fat Data
       </li>

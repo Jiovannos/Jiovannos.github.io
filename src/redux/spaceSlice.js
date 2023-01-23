@@ -115,6 +115,8 @@ export const spaceSlice = createSlice({
         state.projects.dicePosition = positions[2];
         state.about.dicePosition = positions[5];
         state.contents.dicePosition = positions[1];
+        state.card.visibility = "hidden";
+        state.card.opacity = 0;
       } else if (window.location.pathname.startsWith("/stacks")) {
         state.contents.dicePosition = positions[2];
         state.projects.dicePosition = positions[3];
@@ -154,6 +156,13 @@ export const spaceSlice = createSlice({
           state.card.visibility = "visible";
           state.card.opacity = 1;
         }
+      } else if (window.location.pathname === "/contact") {
+        state.stacks.dicePosition = positions[0];
+        state.projects.dicePosition = positions[2];
+        state.about.dicePosition = positions[5];
+        state.contents.dicePosition = focusedPosition;
+        state.card.visibility = "visible";
+        state.card.opacity = 1;
       }
     },
   },

@@ -32,8 +32,8 @@ export default function PortfolioCard(props) {
         </p>
         <div className={css.section}>
           <div className={css.lowerTitle}>Link:</div>
-          <a className={css.link} href={"http://localhost:3006/"}>
-            http://localhost:3006/
+          <a className={css.link} href={"https://jiovannos.github.io/"}>
+            https://jiovannos.github.io/
           </a>
         </div>
         <p className={css.description}>

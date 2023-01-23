@@ -38,7 +38,7 @@ export default function Scene() {
           focused={contentsState.focus}
           zoom={contentsState.zoom}
         />
-        <DiceGlb
+        {/* <DiceGlb
           sides={12}
           name="projectsDie"
           newPosition={projectsState.dicePosition}
@@ -46,10 +46,28 @@ export default function Scene() {
           rotSide={projectsState.rotation}
           focused={projectsState.focus}
           zoom={projectsState.zoom}
+        /> */}
+        <DiceGlb
+          sides={10}
+          name="projectsDie"
+          newPosition={projectsState.dicePosition}
+          initialPosition={[15, 0, 0]}
+          rotSide={projectsState.rotation}
+          focused={projectsState.focus}
+          zoom={projectsState.zoom}
         />
+        {/* <DiceGlb
+          sides={20}
+          name="projectsDie"
+          newPosition={projectsState.dicePosition}
+          initialPosition={[15, 0, 0]}
+          rotSide={projectsState.rotation}
+          focused={projectsState.focus}
+          zoom={projectsState.zoom}
+        /> */}
         <Coin
           name="aboutDie"
-          // sides={12}
+          sides={2}
           newPosition={aboutState.dicePosition}
           initialPosition={[-15, 0, 0]}
           rotSide={aboutState.rotation}

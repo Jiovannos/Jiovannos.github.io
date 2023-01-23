@@ -14,3 +14,10 @@ code {
 ::-webkit-scrollbar-thumb {
   background: transparent;
 }
+div {
+  -moz-user-select: text;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
