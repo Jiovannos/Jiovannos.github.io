@@ -1,6 +1,6 @@
 import React from "react";
 import css from "./styles.module.css";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {
   setVisibility,
@@ -13,7 +13,6 @@ import { useNavigate } from "react-router";
 export default function About(props) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
   const openCard = () => {
     dispatch(
       setVisibility({
@@ -23,7 +22,7 @@ export default function About(props) {
       })
     );
   };
-
+  // Checks the current URL and sets the state accordingly
   useEffect(() => {
     dispatch(checkUrl());
   }, [window.location.pathname]);

@@ -2,13 +2,7 @@ import React from "react";
 import css from "./styles.module.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { checkUrl } from "../../../redux/spaceSlice";
-import {
-  setVisibility,
-  rotatePosition,
-  rotateContents,
-  setFocus,
-} from "../../../redux/spaceSlice";
+import { rotateContents, setFocus } from "../../../redux/spaceSlice";
 import { filterProjects } from "../../../redux/searchSlice";
 import { useNavigate } from "react-router";
 import { SlMagnifier } from "react-icons/sl";
@@ -16,7 +10,6 @@ import { SlMagnifier } from "react-icons/sl";
 export default function SearchBar(props) {
   const navigate = useNavigate();
   const searchState = useSelector((state) => state.search);
-  const spaceState = useSelector((state) => state.space);
   const searchWord = searchState.searchWord;
   useEffect(() => {
     setValue(searchWord);
@@ -25,12 +18,14 @@ export default function SearchBar(props) {
 
   const dispatch = useDispatch();
   const goBack = () => {
-    // dispatch(checkUrl());
+    // Checks the previous Route in the tree and goes there
     let previousLevel = window.location.pathname.substring(
       0,
       window.location.pathname.lastIndexOf("/")
     );
     navigate(previousLevel);
+    setValue("");
+    dispatch(filterProjects(""));
   };
 
   const handleKeyEnter = (event) => {
@@ -77,7 +72,7 @@ export default function SearchBar(props) {
         />
       </div>
       <div className={css.commentDiv}>
-        <div className={css.comment}>Type a keyword to see projects</div>
+        <div className={css.comment}>Type to see projects:</div>
         <div
           className={css.link}
           onClick={() => {

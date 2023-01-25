@@ -9,10 +9,11 @@ import { setFocus, rotateContents } from "../../../redux/spaceSlice";
 export default function Projects(props) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const spaceState = useSelector((state) => state.space);
   const searchState = useSelector((state) => state.search);
+  // Sets the visibility of the fields that match the search query
   const visible = searchState.displayFields;
 
+  // Checks the current URL and sets the state accordingly
   useEffect(() => {
     dispatch(checkUrl());
   }, [window.location.pathname]);
@@ -74,7 +75,7 @@ export default function Projects(props) {
           dispatch(setFocus({ category: "projects", focused: true }));
         }}
         onClick={() => {
-          navigate("/projects/minnieandmaxx");
+          navigate("/projects/weighttracker");
         }}
         style={{ display: visible.weight }}
       >
@@ -87,7 +88,7 @@ export default function Projects(props) {
           dispatch(setFocus({ category: "projects", focused: true }));
         }}
         onClick={() => {
-          navigate("/projects/minnieandmaxx");
+          navigate("/projects/mtgscrapper");
         }}
         style={{ display: visible.mtgScrapper }}
       >

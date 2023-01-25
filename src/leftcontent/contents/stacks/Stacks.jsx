@@ -1,34 +1,14 @@
 import React from "react";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import css from "./styles.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  setPosition,
-  setVisibility,
-  checkUrl,
-  setFocus,
-  rotateContents,
-} from "../../../redux/spaceSlice";
+import { useDispatch } from "react-redux";
+import { checkUrl, setFocus, rotateContents } from "../../../redux/spaceSlice";
 import { useNavigate } from "react-router";
-
-// import Contents from "../Contents";
-// import { useState } from "react";
 
 export default function Stacks(props) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const spaceState = useSelector((state) => state.space);
-  const stacksState = spaceState.stacks;
-  const openCard = () => {
-    dispatch(
-      setVisibility({
-        category: "card",
-        visibility: "visible",
-        opacity: 1,
-      })
-    );
-  };
-
+  // Checks the current URL and sets the state accordingly
   useEffect(() => {
     dispatch(checkUrl());
   }, [window.location.pathname]);
@@ -71,7 +51,7 @@ export default function Stacks(props) {
       <li
         className={css.category}
         onClick={() => {
-          navigate("/stacks/datascience");
+          navigate("/stacks/data");
         }}
         onMouseOver={() => {
           dispatch(rotateContents({ category: "stacks", rotation: 3 }));
@@ -82,7 +62,7 @@ export default function Stacks(props) {
             dispatch(setFocus({ category: "stacks", focused: false }));
         }}
       >
-        Data Science
+        Data
       </li>
       <li
         className={css.category}

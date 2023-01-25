@@ -1,15 +1,9 @@
 import React from "react";
 import css from "./styles.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  rotateContents,
-  setFocus,
-  setPosition,
-  setVisibility,
-  checkUrl,
-} from "../../../redux/spaceSlice";
+import { rotateContents, setFocus, checkUrl } from "../../../redux/spaceSlice";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 export default function Categories(props) {
   const navigate = useNavigate();
@@ -20,6 +14,7 @@ export default function Categories(props) {
     dispatch(rotateContents(cat));
   }
 
+  // Checks the current URL and sets the state accordingly
   useEffect(() => {
     dispatch(checkUrl());
   }, [window.location.pathname]);

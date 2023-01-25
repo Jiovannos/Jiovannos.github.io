@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+//This sets the positions and state of each category
 const initialState = {
   contents: {
     focus: false,

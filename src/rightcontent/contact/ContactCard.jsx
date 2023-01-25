@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 import css from "./styles.module.css";
 import { useNavigate } from "react-router";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import {
   AiFillLinkedin,
   AiFillGithub,
-  AiFillMail,
-  AiTwotoneMail,
-  AiTwotonePhone,
-  AiFillClockCircle,
   AiOutlineClockCircle,
   AiFillCheckCircle,
   AiFillPauseCircle,
@@ -67,7 +62,7 @@ export default function ContantCard(props) {
     }, 60000);
 
     return () => clearInterval(interval);
-  }, []);
+  });
 
   return (
     <>

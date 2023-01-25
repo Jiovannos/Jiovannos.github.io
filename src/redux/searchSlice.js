@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// Keywords to match projects
 const keywords = [
   { name: "portfolio", keys: ["frontend"] },
   { name: "saas", keys: ["react"] },
@@ -13,6 +14,7 @@ const keywords = [
   { name: "bigFatData", keys: [] },
 ];
 
+// Filtered projects have display set to none otherwise revert
 const initialState = {
   searchWord: "",
   displayFields: {

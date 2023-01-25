@@ -1,16 +1,9 @@
 import React from "react";
 import css from "./styles.module.css";
-import { useDispatch } from "react-redux";
-import {
-  setVisibility,
-  rotatePosition,
-  checkUrl,
-} from "../../../redux/spaceSlice";
 import { useNavigate } from "react-router";
 
 export default function BioCard(props) {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const closeCard = () => {
     navigate("/about");
   };
@@ -21,9 +14,6 @@ export default function BioCard(props) {
           x
         </button>
         <h1 className={css.title}>Biography</h1>
-        {/* <p className={css.shortDescription}>
-          FrontEnd Web Application - React and Three.js.
-        </p> */}
         <div className={css.imgContainer}>
           <img
             src={"/profile.png"}
@@ -31,12 +21,11 @@ export default function BioCard(props) {
             alt="jiovannos profile"
           />
           <p className={css.description}>
-            {" "}
             <b className={css.bold}>Yannis</b> (Ioannis) is a{" "}
             <b className={css.bold}>Programmer</b> and a{" "}
             <b className={css.bold}>Civil Engineer</b> with a passion for
             creating and a love for learning. He is a graduate of the University
-            of Thessaly, with a{" "}
+            of Thessaly, Greece, with a{" "}
             <b className={css.bold}>MSc in Civil Engineering</b>. He worked as a
             civil engineer and later founded his own construction company.
           </p>
@@ -51,8 +40,9 @@ export default function BioCard(props) {
           and <b className={css.bold}>SQL</b>.
         </p>
         <p className={css.description}>
-          He loves learning new things and is always looking for new challenges.
-          He took <b className={css.bold}>Intensive Private Lessons</b> in{" "}
+          He loves learning something new every day and is always looking for
+          new challenges. He took{" "}
+          <b className={css.bold}>Intensive Private Lessons</b> in{" "}
           <b className={css.bold}>Programming</b> and he is currently studying
           for a Master's degree in{" "}
           <b className={css.bold}>Artificial Intelligence.</b>
@@ -62,8 +52,8 @@ export default function BioCard(props) {
           Technology.
         </p>
         <p className={css.description}>
-          In his free time, he is playing a plethora of musical instruments,
-          hiking in the mountains, hanging out with friends or playing D&D.
+          In his free time, he is Playing a plethora of musical instruments,
+          Hiking in the mountains, Hanging out with friends or Playing D&D.
         </p>
         <p className={css.description}>
           There is constantly a song playing on the back of his head and he
@@ -73,13 +63,9 @@ export default function BioCard(props) {
           He likes to solve small everyday life problems with math and
           transforms every-single-situation into a graph.
         </p>
-        {/* <p className={css.description}>
-          He enjoys being good at so many things but a little ashamed to be
-          hyper-specialized in None of them.
-        </p> */}
         <p className={css.description}>
-          He is <b className={css.bold}>most proud</b> of his ability to turn
-          aggressive people into friendly ones in no time.
+          His <b className={css.bold}>Superpower</b> is the ability to rapidly
+          turn aggressive people into friendly ones..
         </p>
       </div>
     </>

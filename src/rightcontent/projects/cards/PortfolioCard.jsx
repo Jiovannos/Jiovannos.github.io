@@ -1,18 +1,16 @@
 import React from "react";
 import css from "./styles.module.css";
 import myText from "../sample/PortfolioCodeText";
-import { useDispatch } from "react-redux";
-import { setVisibility, rotatePosition } from "../../../redux/spaceSlice";
 import { CopyBlock, dracula } from "react-code-blocks";
 import { useNavigate } from "react-router";
 
 export default function PortfolioCard(props) {
   const [display, setDisplay] = React.useState("none");
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const closeCard = () => {
     navigate("/projects");
   };
+  //Toggles Code Display Display on and off
   const toggleCode = () => {
     if (display === "none") {
       setDisplay("flex");
@@ -31,7 +29,7 @@ export default function PortfolioCard(props) {
           FrontEnd Web Application - React and Three.js.
         </p>
         <div className={css.section}>
-          <div className={css.lowerTitle}>Link:</div>
+          <div className={css.lowerTitle}>Website:</div>
           <a className={css.link} href={"https://jiovannos.github.io/"}>
             https://jiovannos.github.io/
           </a>

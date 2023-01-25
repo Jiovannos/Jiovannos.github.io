@@ -1,5 +1,4 @@
 import React from "react";
-import css from "./styles.module.css";
 import SearchBar from "./searchbar/SearchBar";
 import Categories from "./categories/Categories";
 import Projects from "./projects/Projects";

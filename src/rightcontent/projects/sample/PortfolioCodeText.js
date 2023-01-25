@@ -1,3 +1,4 @@
+// An efficient way to keep code formatting when asked for the code block
 const myText = `import React, { useRef, useState, useEffect } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";

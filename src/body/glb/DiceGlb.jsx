@@ -3,7 +3,6 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import rotationHelper from "./rotationHelper";
 import * as THREE from "three";
-import { AxesHelper } from "three";
 
 export default function DiceGlb(props) {
   // This reference gives us direct access to the THREE.Mesh object
@@ -54,14 +53,6 @@ export default function DiceGlb(props) {
     ref.current.rotation.y += delta / 6;
     ref.current.rotation.z += delta / 6;
     threeState.camera.zoom = zoom;
-    // console.log(
-    //   "x",
-    //   ref.current.rotation.x,
-    //   "y",
-    //   ref.current.rotation.y,
-    //   "z",
-    //   ref.current.rotation.z
-    // );
     if (pos.change) {
       [ref.current.position.x, ref.current.position.y, ref.current.position.z] =
         lerp(ref.current.position, pos.newPos, 0.02);

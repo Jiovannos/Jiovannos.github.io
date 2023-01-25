@@ -1,5 +1,4 @@
 import React from "react";
-// import css from "./styles.module.css";
 import { useRef, useState, useEffect } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
@@ -13,7 +12,7 @@ export default function Coin(props) {
     change: false,
     newPos: { x: 0, y: 0, z: 0 },
   });
-
+  // If Focused is true, the object will rotate to the rot position
   const focused = props.focused ? props.focused : false;
   const zoom = props.zoom ? props.zoom : 1;
 
@@ -21,6 +20,7 @@ export default function Coin(props) {
     ? rotationHelper[props.sides][props.rotSide]
     : { x: 0, y: 0, z: 0 };
 
+  // A function to make a smoother linear interpolation of a position or rotation
   function lerp(start, target, factor) {
     start.x = start.x + (target.x - start.x) * factor;
     start.y = start.y + (target.y - start.y) * factor;
@@ -31,6 +31,7 @@ export default function Coin(props) {
     setPos({ change: true, newPos: props.newPosition });
   }, [props.newPosition]);
 
+  // This writes the component into the scene's render loop
   useFrame((state, delta) => {
     if (ref.current.rotation.x > 6.28) {
       ref.current.rotation.x = 0;
@@ -56,6 +57,7 @@ export default function Coin(props) {
         lerp(ref.current.rotation, rot, 0.1);
     }
   });
+  // Loads the model from the .glb file
   const { nodes, materials } = useGLTF("/stylized_pirate_coin.glb");
   let geometry;
   let material;

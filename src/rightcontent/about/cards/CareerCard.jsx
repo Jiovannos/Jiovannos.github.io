@@ -1,16 +1,9 @@
 import React from "react";
 import css from "./styles.module.css";
-import { useDispatch } from "react-redux";
-import {
-  setVisibility,
-  rotatePosition,
-  checkUrl,
-} from "../../../redux/spaceSlice";
 import { useNavigate } from "react-router";
 
 export default function CareerCard(props) {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const closeCard = () => {
     navigate("/about");
   };
@@ -21,11 +14,7 @@ export default function CareerCard(props) {
           x
         </button>
         <h1 className={css.title}>Career</h1>
-        {/* <p className={css.shortDescription}>
-          FrontEnd Web Application - React and Three.js.
-        </p> */}
         <p className={css.description}>
-          {" "}
           <b className={css.bold}>Yannis</b> grew up in construction. His father
           was a civil engineer, owner of a construction company. He visited
           construction sites as a kid and started working there even before
@@ -37,7 +26,7 @@ export default function CareerCard(props) {
           <b className={css.bold}>Chief Engineer</b>.
         </p>
         <p className={css.description}>
-          The small size of the company dictated that he would took part in
+          The small size of the company dictated that he would take part in
           every aspect of the company's management. From{" "}
           <b className={css.bold}>Technical </b> and{" "}
           <b className={css.bold}>Financial Management</b> to{" "}
