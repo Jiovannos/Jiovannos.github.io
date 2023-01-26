@@ -84,19 +84,6 @@ export default function Projects(props) {
       <li
         className={css.category}
         onMouseOver={() => {
-          dispatch(rotateContents({ category: "projects", rotation: 5 }));
-          dispatch(setFocus({ category: "projects", focused: true }));
-        }}
-        onClick={() => {
-          navigate("/projects/mtgscrapper");
-        }}
-        style={{ display: visible.mtgScrapper }}
-      >
-        Magic Scrapper
-      </li>
-      <li
-        className={css.category}
-        onMouseOver={() => {
           dispatch(rotateContents({ category: "projects", rotation: 6 }));
           dispatch(setFocus({ category: "projects", focused: true }));
         }}
@@ -106,6 +93,19 @@ export default function Projects(props) {
         style={{ display: visible.eyeMouse }}
       >
         Eye Mouse
+      </li>
+      <li
+        className={css.category}
+        onMouseOver={() => {
+          dispatch(rotateContents({ category: "projects", rotation: 5 }));
+          dispatch(setFocus({ category: "projects", focused: true }));
+        }}
+        onClick={() => {
+          navigate("/projects/mtgscrapper");
+        }}
+        style={{ display: visible.mtgScrapper }}
+      >
+        Magic Scrapper
       </li>
       <li
         className={css.category}

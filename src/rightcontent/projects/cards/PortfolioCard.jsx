@@ -65,6 +65,7 @@ export default function PortfolioCard(props) {
           </div>
         </div>
         <div className={css.hashTags}>
+          <div className={css.tag}>#FrontEnd</div>
           <div className={css.tag}>#JavaScript</div>
           <div className={css.tag}>#React</div>
           <div className={css.tag}>#Three.js</div>

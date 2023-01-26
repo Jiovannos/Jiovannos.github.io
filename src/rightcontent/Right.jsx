@@ -2,6 +2,10 @@ import React from "react";
 import css from "./styles.module.css";
 import { useSelector } from "react-redux";
 import PortfolioCard from "./projects/cards/PortfolioCard";
+import SaaSPlatformCard from "./projects/cards/SaaSPlatformCard";
+import MinnieAndMaxxCard from "./projects/cards/MinnieAndMaxxCard";
+import WeightTrackerCard from "./projects/cards/WeightTrackerCard";
+import EyeMouseCard from "./projects/cards/EyeMouseCard";
 import CareerCard from "./about/cards/CareerCard";
 import BioCard from "./about/cards/BioCard";
 import { Routes, Route } from "react-router-dom";
@@ -38,7 +42,37 @@ export default function Right() {
           <Route path="/projects/portfolio" element={<PortfolioCard />} />
           <Route path="/about/bio" element={<BioCard />} />
           <Route path="/about/career" element={<CareerCard />} />
-          <Route path="*" element={<UnderConstructionCard />} />
+          <Route path="*" element={<div />} />
+          <Route path="/projects/saasplatform" element={<SaaSPlatformCard />} />
+          <Route
+            path="/projects/minnieandmaxx"
+            element={<MinnieAndMaxxCard />}
+          />
+          <Route
+            path="/projects/weighttracker"
+            element={<WeightTrackerCard />}
+          />
+          <Route
+            path="/projects/mtgscrapper"
+            element={<UnderConstructionCard />}
+          />
+          <Route path="/projects/eyemouse" element={<EyeMouseCard />} />
+          <Route
+            path="/projects/bodypercussion"
+            element={<UnderConstructionCard />}
+          />
+          <Route
+            path="/projects/procurementanalysis"
+            element={<UnderConstructionCard />}
+          />
+          <Route
+            path="/projects/chordcalculator"
+            element={<UnderConstructionCard />}
+          />
+          <Route
+            path="/projects/bigfatdata"
+            element={<UnderConstructionCard />}
+          />
         </Routes>
       </div>
     </div>

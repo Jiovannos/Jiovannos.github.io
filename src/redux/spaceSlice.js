@@ -52,7 +52,6 @@ export const spaceSlice = createSlice({
   initialState,
   reducers: {
     rotateContents: (state, action) => {
-      console.log("rotating");
       state[action.payload.category].rotation = action.payload.rotation;
     },
     setFocus: (state, action) => {

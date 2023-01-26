@@ -15,13 +15,13 @@ export default function DiceGlb(props) {
 
   // If Focused is true, the object will rotate to the rot position
   const focused = props.focused ? props.focused : false;
-  if (props.focused) {
-    console.log(
-      props.rotSide,
-      props.sides,
-      rotationHelper[props.sides][props.rotSide]
-    );
-  }
+  // if (props.focused) {
+  //   console.log(
+  //     props.rotSide,
+  //     props.sides,
+  //     rotationHelper[props.sides][props.rotSide]
+  //   );
+  // }
 
   const rot = props.focused
     ? rotationHelper[props.sides][props.rotSide]
