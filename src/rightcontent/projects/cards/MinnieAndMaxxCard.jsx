@@ -3,7 +3,8 @@ import css from "./styles.module.css";
 import myText from "../sample/MinnieAndMaxxCodeText";
 import { CopyBlock, dracula } from "react-code-blocks";
 import { useNavigate } from "react-router";
-
+import { useDispatch } from "react-redux";
+import { filterProjects, setSearchWord } from "../../../redux/searchSlice";
 export default function MinnieAndMaxxCard(props) {
   const [display, setDisplay] = React.useState("none");
   const navigate = useNavigate();
@@ -18,14 +19,19 @@ export default function MinnieAndMaxxCard(props) {
       setDisplay("none");
     }
   };
-
+  const dispatch = useDispatch();
+  const handlehashTags = (tag) => {
+    dispatch(setSearchWord(tag));
+    dispatch(filterProjects(tag));
+    navigate("/projects");
+  };
   return (
     <>
       <div className={css.container}>
         <button className={css.xButton} onClick={closeCard}>
           x
         </button>
-        <h1 className={css.title}>SaaS Platform</h1>
+        <h1 className={css.title}>Minnie and Maxx</h1>
         <p className={css.shortDescription}>
           FullStack Web Application - Python - TypeScript - MongoDB - React -
           Flask
@@ -77,19 +83,118 @@ export default function MinnieAndMaxxCard(props) {
           </div>
         </div>
         <div className={css.hashTags}>
-          <div className={css.tag}>#FullStack</div>
-          <div className={css.tag}>#TypeScript</div>
-          <div className={css.tag}>#JavaScript</div>
-          <div className={css.tag}>#React.js</div>
-          <div className={css.tag}>#Python</div>
-          <div className={css.tag}>#Flask</div>
-          <div className={css.tag}>#MongoDB</div>
-          <div className={css.tag}>#HTML</div>
-          <div className={css.tag}>#CSS</div>
-          <div className={css.tag}>#Redux</div>
-          <div className={css.tag}>#Docker</div>
-          <div className={css.tag}>#Statistics</div>
-          <div className={css.tag}>#DataAnalysis</div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #FullStack
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #TypeScript
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #JavaScript
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #React.js
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Python
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Flask
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #MongoDB
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #HTML
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #CSS
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Redux
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Docker
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Statistics
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #DataAnalysis
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #REST
+          </div>
         </div>
       </div>
     </>

@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./styles.module.css";
-
+import { useDispatch } from "react-redux";
+import { filterProjects, setSearchWord } from "../../../redux/searchSlice";
 import { useNavigate } from "react-router";
 
 export default function PythonCard(props) {
@@ -8,7 +9,12 @@ export default function PythonCard(props) {
   const closeCard = () => {
     navigate("/stacks");
   };
-
+  const dispatch = useDispatch();
+  const handlehashTags = (tag) => {
+    dispatch(setSearchWord(tag));
+    dispatch(filterProjects(tag));
+    navigate("/projects");
+  };
   return (
     <>
       <div className={css.container}>
@@ -70,22 +76,7 @@ export default function PythonCard(props) {
           >
             Procurement Analysis
           </div>
-          <div
-            className={css.projectLink}
-            onClick={() => {
-              navigate("/projects/chordcalculator");
-            }}
-          >
-            Chord Calculator
-          </div>
-          <div
-            className={css.projectLink}
-            onClick={() => {
-              navigate("/projects/bodypercussion");
-            }}
-          >
-            Body Percussion
-          </div>
+
           <div
             className={css.projectLink}
             onClick={() => {
@@ -104,18 +95,102 @@ export default function PythonCard(props) {
         </p>
 
         <div className={css.hashTags}>
-          <div className={css.tag}>#Automation</div>
-          <div className={css.tag}>#WebScrapping</div>
-          <div className={css.tag}>#Backend</div>
-          <div className={css.tag}>#DataEngineering</div>
-          <div className={css.tag}>#DataAnalysis</div>
-          <div className={css.tag}>#Flask</div>
-          <div className={css.tag}>#Pandas</div>
-          <div className={css.tag}>#Numpy</div>
-          <div className={css.tag}>#Selenium</div>
-          <div className={css.tag}>#Matplotlib</div>
-          <div className={css.tag}>#MachineLearning</div>
-          <div className={css.tag}>#OpenCV</div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Automation
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #WebScrapping
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Backend
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #DataEngineering
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #DataAnalysis
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Flask
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Pandas
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Numpy
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Selenium
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Matplotlib
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #MachineLearning
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #OpenCV
+          </div>
         </div>
       </div>
     </>

@@ -74,6 +74,23 @@ export default function Projects(props) {
           dispatch(rotateContents({ category: "projects", rotation: 4 }));
           dispatch(setFocus({ category: "projects", focused: true }));
         }}
+        onMouseLeave={() => {
+          if (window.location.pathname === "/projects")
+            dispatch(setFocus({ category: "projects", focused: false }));
+        }}
+        onClick={() => {
+          navigate("/projects/chordpal");
+        }}
+        style={{ display: visible.chords }}
+      >
+        ChordPal
+      </li>
+      <li
+        className={css.category}
+        onMouseOver={() => {
+          dispatch(rotateContents({ category: "projects", rotation: 5 }));
+          dispatch(setFocus({ category: "projects", focused: true }));
+        }}
         onClick={() => {
           navigate("/projects/weighttracker");
         }}
@@ -97,7 +114,7 @@ export default function Projects(props) {
       <li
         className={css.category}
         onMouseOver={() => {
-          dispatch(rotateContents({ category: "projects", rotation: 5 }));
+          dispatch(rotateContents({ category: "projects", rotation: 7 }));
           dispatch(setFocus({ category: "projects", focused: true }));
         }}
         onClick={() => {
@@ -110,7 +127,7 @@ export default function Projects(props) {
       <li
         className={css.category}
         onMouseOver={() => {
-          dispatch(rotateContents({ category: "projects", rotation: 7 }));
+          dispatch(rotateContents({ category: "projects", rotation: 8 }));
           dispatch(setFocus({ category: "projects", focused: true }));
         }}
         onMouseLeave={() => {
@@ -124,23 +141,7 @@ export default function Projects(props) {
       >
         Procurement Analysis
       </li>
-      <li
-        className={css.category}
-        onMouseOver={() => {
-          dispatch(rotateContents({ category: "projects", rotation: 8 }));
-          dispatch(setFocus({ category: "projects", focused: true }));
-        }}
-        onMouseLeave={() => {
-          if (window.location.pathname === "/projects")
-            dispatch(setFocus({ category: "projects", focused: false }));
-        }}
-        onClick={() => {
-          navigate("/projects/chordcalculator");
-        }}
-        style={{ display: visible.chords }}
-      >
-        Chord Calculator
-      </li>
+
       <li
         className={css.category}
         onMouseOver={() => {

@@ -3,7 +3,8 @@ import css from "./styles.module.css";
 import myText from "../sample/WeightTrackerCodeText";
 import { CopyBlock, dracula } from "react-code-blocks";
 import { useNavigate } from "react-router";
-
+import { useDispatch } from "react-redux";
+import { filterProjects, setSearchWord } from "../../../redux/searchSlice";
 export default function WeightTrackerCard(props) {
   const [display, setDisplay] = React.useState("none");
   const navigate = useNavigate();
@@ -18,14 +19,19 @@ export default function WeightTrackerCard(props) {
       setDisplay("none");
     }
   };
-
+  const dispatch = useDispatch();
+  const handlehashTags = (tag) => {
+    dispatch(setSearchWord(tag));
+    dispatch(filterProjects(tag));
+    navigate("/projects");
+  };
   return (
     <>
       <div className={css.container}>
         <button className={css.xButton} onClick={closeCard}>
           x
         </button>
-        <h1 className={css.title}>SaaS Platform</h1>
+        <h1 className={css.title}>Weight Tracker</h1>
         <p className={css.shortDescription}>
           Desktop Application - Python - GUI - MySQL
         </p>
@@ -60,9 +66,30 @@ export default function WeightTrackerCard(props) {
           </div>
         </div>
         <div className={css.hashTags}>
-          <div className={css.tag}>#GUI</div>
-          <div className={css.tag}>#Python</div>
-          <div className={css.tag}>#MySQL</div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #GUI
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Python
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #MySQL
+          </div>
         </div>
       </div>
     </>

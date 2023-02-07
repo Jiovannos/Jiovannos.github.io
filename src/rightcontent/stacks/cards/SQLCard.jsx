@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./styles.module.css";
-
+import { useDispatch } from "react-redux";
+import { filterProjects, setSearchWord } from "../../../redux/searchSlice";
 import { useNavigate } from "react-router";
 
 export default function SQLCard(props) {
@@ -8,7 +9,12 @@ export default function SQLCard(props) {
   const closeCard = () => {
     navigate("/stacks");
   };
-
+  const dispatch = useDispatch();
+  const handlehashTags = (tag) => {
+    dispatch(setSearchWord(tag));
+    dispatch(filterProjects(tag));
+    navigate("/projects");
+  };
   return (
     <>
       <div className={css.container}>
@@ -22,19 +28,18 @@ export default function SQLCard(props) {
           <div
             className={css.projectLink}
             onClick={() => {
-              navigate("/projects/weighttracker");
+              navigate("/projects/saasplatform");
             }}
           >
-            Weight Tracker
+            SaaS Platform
           </div>
-
           <div
             className={css.projectLink}
             onClick={() => {
-              navigate("/projects/eyemouse");
+              navigate("/projects/minnieandmaxx");
             }}
           >
-            Eye Mouse
+            Minnie and Maxx
           </div>
           <div
             className={css.projectLink}
@@ -44,22 +49,7 @@ export default function SQLCard(props) {
           >
             Procurement Analysis
           </div>
-          <div
-            className={css.projectLink}
-            onClick={() => {
-              navigate("/projects/chordcalculator");
-            }}
-          >
-            Chord Calculator
-          </div>
-          <div
-            className={css.projectLink}
-            onClick={() => {
-              navigate("/projects/bodypercussion");
-            }}
-          >
-            Body Percussion
-          </div>
+
           <div
             className={css.projectLink}
             onClick={() => {
@@ -74,8 +64,22 @@ export default function SQLCard(props) {
         </p>
 
         <div className={css.hashTags}>
-          <div className={css.tag}>#MySQL</div>
-          <div className={css.tag}>#SQLite</div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #MySQL
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #SQLite
+          </div>
         </div>
       </div>
     </>

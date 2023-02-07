@@ -1,13 +1,19 @@
 import React from "react";
 import css from "./styles.module.css";
 import { useNavigate } from "react-router";
-
+import { useDispatch } from "react-redux";
+import { filterProjects, setSearchWord } from "../../../redux/searchSlice";
 export default function DataCard(props) {
   const navigate = useNavigate();
   const closeCard = () => {
     navigate("/stacks");
   };
-
+  const dispatch = useDispatch();
+  const handlehashTags = (tag) => {
+    dispatch(setSearchWord(tag));
+    dispatch(filterProjects(tag));
+    navigate("/projects");
+  };
   return (
     <>
       <div className={css.container}>
@@ -39,10 +45,10 @@ export default function DataCard(props) {
           <div
             className={css.projectLink}
             onClick={() => {
-              navigate("/projects/weighttracker");
+              navigate("/projects/chordpal");
             }}
           >
-            Weight Tracker
+            ChordPal
           </div>
           <div
             className={css.projectLink}
@@ -51,6 +57,14 @@ export default function DataCard(props) {
             }}
           >
             Magic Scrapper
+          </div>
+          <div
+            className={css.projectLink}
+            onClick={() => {
+              navigate("/projects/weighttracker");
+            }}
+          >
+            Weight Tracker
           </div>
           <div
             className={css.projectLink}
@@ -68,14 +82,7 @@ export default function DataCard(props) {
           >
             Procurement Analysis
           </div>
-          <div
-            className={css.projectLink}
-            onClick={() => {
-              navigate("/projects/chordcalculator");
-            }}
-          >
-            Chord Calculator
-          </div>
+
           <div
             className={css.projectLink}
             onClick={() => {
@@ -99,18 +106,102 @@ export default function DataCard(props) {
         </p>
 
         <div className={css.hashTags}>
-          <div className={css.tag}>#Python</div>
-          <div className={css.tag}>#Pandas</div>
-          <div className={css.tag}>#Numpy</div>
-          <div className={css.tag}>#scikit-learn</div>
-          <div className={css.tag}>#SQL</div>
-          <div className={css.tag}>#MySQL</div>
-          <div className={css.tag}>#NoSQL</div>
-          <div className={css.tag}>#MongoDB</div>
-          <div className={css.tag}>#Neo4j</div>
-          <div className={css.tag}>#ETL</div>
-          <div className={css.tag}>#Matplotlib</div>
-          <div className={css.tag}>#Tableau</div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Python
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Pandas
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Numpy
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #scikit-learn
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #SQL
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #MySQL
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #NoSQL
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #MongoDB
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Neo4j
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #ETL
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Matplotlib
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Tableau
+          </div>
         </div>
       </div>
     </>

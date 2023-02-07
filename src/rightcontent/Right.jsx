@@ -6,6 +6,7 @@ import SaaSPlatformCard from "./projects/cards/SaaSPlatformCard";
 import MinnieAndMaxxCard from "./projects/cards/MinnieAndMaxxCard";
 import WeightTrackerCard from "./projects/cards/WeightTrackerCard";
 import EyeMouseCard from "./projects/cards/EyeMouseCard";
+import ChordPalCard from "./projects/cards/ChordPalCard";
 import CareerCard from "./about/cards/CareerCard";
 import BioCard from "./about/cards/BioCard";
 import { Routes, Route } from "react-router-dom";
@@ -65,10 +66,7 @@ export default function Right() {
             path="/projects/procurementanalysis"
             element={<UnderConstructionCard />}
           />
-          <Route
-            path="/projects/chordcalculator"
-            element={<UnderConstructionCard />}
-          />
+          <Route path="/projects/chordpal" element={<ChordPalCard />} />
           <Route
             path="/projects/bigfatdata"
             element={<UnderConstructionCard />}

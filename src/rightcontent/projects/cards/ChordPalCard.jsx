@@ -1,11 +1,12 @@
 import React from "react";
 import css from "./styles.module.css";
-import myText from "../sample/SaasPlatformCodeText";
-import { CopyBlock, dracula } from "react-code-blocks";
-import { useNavigate } from "react-router";
+import myText from "../sample/ChordPalCodeText";
 import { useDispatch } from "react-redux";
 import { filterProjects, setSearchWord } from "../../../redux/searchSlice";
-export default function SaaSPlatformCard(props) {
+import { CopyBlock, dracula } from "react-code-blocks";
+import { useNavigate } from "react-router";
+
+export default function ChordPalCard(props) {
   const [display, setDisplay] = React.useState("none");
   const navigate = useNavigate();
   const closeCard = () => {
@@ -32,50 +33,51 @@ export default function SaaSPlatformCard(props) {
         <button className={css.xButton} onClick={closeCard}>
           x
         </button>
-        <h1 className={css.title}>SaaS Platform</h1>
+        <h1 className={css.title}>ChordPal</h1>
         <p className={css.shortDescription}>
-          FullStack Web Application - Python - JavaScript - MERN Stack (MongoDB
-          - Express - React - Node).
+          Web Application - JavaScript - MERN (MongoDB - Express.js - React.js
+          Node.js)
         </p>
         <div className={css.section}>
           <div className={css.lowerTitle}>Website:</div>
-          <div className={css.link}>Access Not Permitted</div>
+          <div className={css.link}>Full Content not ready yet</div>
         </div>
         <div className={css.section}>
           <div className={css.lowerTitle}>Preview:</div>
           <a
             className={css.link}
-            href={"https://i.ibb.co/bKdr3vJ/Saa-SPlatform-Preview.png"}
+            href={"https://i.ibb.co/qCzZs0C/ChordPal.png"}
             target="_blank"
             rel="noreferrer"
           >
-            SaaS Platform (First Page)
+            ChordPal (Main Screen)
           </a>
         </div>
+
         <p className={css.description}>
-          This is the main project I have been working on. It is a SaaS platform
-          for connecting Construction companies with Material Suppliers and
-          Subcontractors. It is almost complete and will be soon released to the
-          market. Most of the project is in MERN Stack with the cloud part in
-          GCP Dockerized and most of the business logic is done in Python.
+          A Web Application for musicians to create and share chord
+          progressions, plus algorithmic analysis of what chords may be present
+          on a song.
         </p>
 
         <div className={css.description}>
           <b>Challenges: </b>
-          This app's main difficulty was extracting data from differently
-          formatted PDFs and converting them into a standard format. I used a
-          series of techniques including OCR, Regex, and NLP to accomplish this.
+          Most challenges were in business logic, rather than development. A
+          classic CRUD application. The biggest challenge was the algorithmic
+          analysis of chords mostly due to the knowledge I needed to acquire in
+          music theory. Thankfully, as a part-time musician, I was half way
+          there.
         </div>
 
         <div className={css.showCode} onClick={toggleCode}>
           Show Sample Code
         </div>
         <div className={css.code} style={{ display: display }}>
-          <div className={css.lowerTitle}>Scrapper_Class.py</div>
+          <div className={css.lowerTitle}>Song.jsx</div>
           <div className={css.codeBlock}>
             <CopyBlock
               text={myText}
-              language={"python"}
+              language={"javascript"}
               showLineNumbers={true}
               startingLineNumber={1}
               theme={dracula}
@@ -91,22 +93,6 @@ export default function SaaSPlatformCard(props) {
               handlehashTags(e.target.outerText.slice(1));
             }}
           >
-            #FullStack
-          </div>
-          <div
-            className={css.tag}
-            onClick={(e) => {
-              handlehashTags(e.target.outerText.slice(1));
-            }}
-          >
-            #Python
-          </div>
-          <div
-            className={css.tag}
-            onClick={(e) => {
-              handlehashTags(e.target.outerText.slice(1));
-            }}
-          >
             #JavaScript
           </div>
           <div
@@ -115,7 +101,7 @@ export default function SaaSPlatformCard(props) {
               handlehashTags(e.target.outerText.slice(1));
             }}
           >
-            #Express.js
+            #React
           </div>
           <div
             className={css.tag}
@@ -123,7 +109,7 @@ export default function SaaSPlatformCard(props) {
               handlehashTags(e.target.outerText.slice(1));
             }}
           >
-            #React.js
+            #Express
           </div>
           <div
             className={css.tag}
@@ -131,23 +117,7 @@ export default function SaaSPlatformCard(props) {
               handlehashTags(e.target.outerText.slice(1));
             }}
           >
-            #Node.js
-          </div>
-          <div
-            className={css.tag}
-            onClick={(e) => {
-              handlehashTags(e.target.outerText.slice(1));
-            }}
-          >
-            #HTML
-          </div>
-          <div
-            className={css.tag}
-            onClick={(e) => {
-              handlehashTags(e.target.outerText.slice(1));
-            }}
-          >
-            #CSS
+            #Node
           </div>
           <div
             className={css.tag}
@@ -163,46 +133,6 @@ export default function SaaSPlatformCard(props) {
               handlehashTags(e.target.outerText.slice(1));
             }}
           >
-            #MySQL
-          </div>
-          <div
-            className={css.tag}
-            onClick={(e) => {
-              handlehashTags(e.target.outerText.slice(1));
-            }}
-          >
-            #Selenium
-          </div>
-          <div
-            className={css.tag}
-            onClick={(e) => {
-              handlehashTags(e.target.outerText.slice(1));
-            }}
-          >
-            #WebScrapping
-          </div>
-          <div
-            className={css.tag}
-            onClick={(e) => {
-              handlehashTags(e.target.outerText.slice(1));
-            }}
-          >
-            #ETL
-          </div>
-          <div
-            className={css.tag}
-            onClick={(e) => {
-              handlehashTags(e.target.outerText.slice(1));
-            }}
-          >
-            #OCR
-          </div>
-          <div
-            className={css.tag}
-            onClick={(e) => {
-              handlehashTags(e.target.outerText.slice(1));
-            }}
-          >
             #Redux
           </div>
           <div
@@ -211,15 +141,7 @@ export default function SaaSPlatformCard(props) {
               handlehashTags(e.target.outerText.slice(1));
             }}
           >
-            #GCP
-          </div>
-          <div
-            className={css.tag}
-            onClick={(e) => {
-              handlehashTags(e.target.outerText.slice(1));
-            }}
-          >
-            #Docker
+            #Music
           </div>
           <div
             className={css.tag}

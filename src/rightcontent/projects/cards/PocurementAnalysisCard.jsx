@@ -1,12 +1,11 @@
 import React from "react";
 import css from "./styles.module.css";
 import myText from "../sample/EyeMouseCodeText";
-import { useDispatch } from "react-redux";
-import { filterProjects, setSearchWord } from "../../../redux/searchSlice";
 import { CopyBlock, dracula } from "react-code-blocks";
 import { useNavigate } from "react-router";
-
-export default function EyeMouseCard(props) {
+import { useDispatch } from "react-redux";
+import { filterProjects, setSearchWord } from "../../../redux/searchSlice";
+export default function PocurementAnalysisCard(props) {
   const [display, setDisplay] = React.useState("none");
   const navigate = useNavigate();
   const closeCard = () => {
@@ -26,44 +25,33 @@ export default function EyeMouseCard(props) {
     dispatch(filterProjects(tag));
     navigate("/projects");
   };
-
   return (
     <>
       <div className={css.container}>
         <button className={css.xButton} onClick={closeCard}>
           x
         </button>
-        <h1 className={css.title}>Eye Mouse</h1>
-        <p className={css.shortDescription}>
-          Desktop Application - Python - GUI - OpenCV - TensorFlow
-        </p>
+        <h1 className={css.title}>Procurement Analysis</h1>
+        <p className={css.shortDescription}>Desktop Application - Python</p>
 
         <p className={css.description}>
-          An ambitious project that failed to bear fruits. The goal was to use
-          the camera to track my eye movements and use that to control the
-          mouse. The ultimate goal was to not only move the mouse, but rather
-          understand what I wanted to do, based on what I was looking in the
-          screen. The project was abandoned due to the lack of accuracy of the
-          eye tracking but it will be revisited in the future when I finish my
-          masters on AI and maybe get a look from a different scope.
+          This is one of the first projects I worked on in Python. It aims to
+          demistify the procurement process in the public works bidding sector.
+          The results were suprising good and the project was a success. This
+          project made me fall in love with data analysis.
         </p>
 
         <div className={css.description}>
           <b>Challenges: </b>
-          It has recorded countless camera-hours of me while I was coding or
-          surfing the web and aligned them with the recordings of my screen's
-          state at the momment. The problem was that I started with 2 screens,
-          then they became 3, then the 1 turned vertical, so pixel mapping was a
-          frustration. I also had to deal with the fact that the camera was not
-          always in the same position, so I had to use calibration to make sure
-          that the eye tracking was accurate. Also, something I was not aware
-          before is that eyes flicker when they are looking at the same spot.
+          It was an overall challenging project because I had to fit a curve in
+          a multi-parameter model. Thankfully my mastery of the real problem I
+          was trying to solve helped a lot.
         </div>
 
         <div className={css.showCode} onClick={toggleCode}>
           Show Sample Code
         </div>
-        <div className={css.code} style={{ display: display }}>
+        {/* <div className={css.code} style={{ display: display }}>
           <div className={css.lowerTitle}>Capture_Class.py</div>
           <div className={css.codeBlock}>
             <CopyBlock
@@ -76,16 +64,8 @@ export default function EyeMouseCard(props) {
               wrapLines
             />
           </div>
-        </div>
+        </div> */}
         <div className={css.hashTags}>
-          <div
-            className={css.tag}
-            onClick={(e) => {
-              handlehashTags(e.target.outerText.slice(1));
-            }}
-          >
-            #GUI
-          </div>
           <div
             className={css.tag}
             onClick={(e) => {
@@ -100,7 +80,7 @@ export default function EyeMouseCard(props) {
               handlehashTags(e.target.outerText.slice(1));
             }}
           >
-            #OpenCV
+            #Numpy
           </div>
           <div
             className={css.tag}
@@ -108,7 +88,23 @@ export default function EyeMouseCard(props) {
               handlehashTags(e.target.outerText.slice(1));
             }}
           >
-            #TensorFlow
+            #Pandas
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Statistics
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #MachineLearning
           </div>
         </div>
       </div>

@@ -2,13 +2,20 @@ import React from "react";
 import css from "./styles.module.css";
 
 import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { filterProjects, setSearchWord } from "../../../redux/searchSlice";
 
 export default function BackEndCard(props) {
   const navigate = useNavigate();
   const closeCard = () => {
     navigate("/stacks");
   };
-
+  const dispatch = useDispatch();
+  const handlehashTags = (tag) => {
+    dispatch(setSearchWord(tag));
+    dispatch(filterProjects(tag));
+    navigate("/projects");
+  };
   return (
     <>
       <div className={css.container}>
@@ -32,10 +39,18 @@ export default function BackEndCard(props) {
           <div
             className={css.projectLink}
             onClick={() => {
-              navigate("/projects/minmax");
+              navigate("/projects/minnieandmaxx");
             }}
           >
             Minnie and Maxx
+          </div>
+          <div
+            className={css.projectLink}
+            onClick={() => {
+              navigate("/projects/chordpal");
+            }}
+          >
+            ChordPal
           </div>
         </div>
         <p className={css.description}>
@@ -45,13 +60,62 @@ export default function BackEndCard(props) {
         </p>
 
         <div className={css.hashTags}>
-          <div className={css.tag}>#Python</div>
-          <div className={css.tag}>#Flask</div>
-          <div className={css.tag}>#Node.js</div>
-          <div className={css.tag}>#Express.js</div>
-          <div className={css.tag}>#REST</div>
-          <div className={css.tag}>#SQL</div>
-          <div className={css.tag}>#noSQL</div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Python
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Flask
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Node.js
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Express.js
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #REST
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #SQL
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #noSQL
+          </div>
         </div>
       </div>
     </>

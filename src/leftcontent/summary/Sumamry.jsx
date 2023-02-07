@@ -8,7 +8,7 @@ export default function Summary(props) {
         Diverse and adaptable, with a plethora of skills at their command.
         Versatility their strength, in an ever-changing world, where jacks of
         all trades make a difference in the end.
-        <p className={css.mention}>- Pooma's definition of a Programmer -</p>
+        <p className={css.mention}>- a Programmer -</p>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./styles.module.css";
-
+import { useDispatch } from "react-redux";
+import { filterProjects, setSearchWord } from "../../../redux/searchSlice";
 import { useNavigate } from "react-router";
 
 export default function FrontEndCard(props) {
@@ -8,7 +9,12 @@ export default function FrontEndCard(props) {
   const closeCard = () => {
     navigate("/stacks");
   };
-
+  const dispatch = useDispatch();
+  const handlehashTags = (tag) => {
+    dispatch(setSearchWord(tag));
+    dispatch(filterProjects(tag));
+    navigate("/projects");
+  };
   return (
     <>
       <div className={css.container}>
@@ -40,10 +46,18 @@ export default function FrontEndCard(props) {
           <div
             className={css.projectLink}
             onClick={() => {
-              navigate("/projects/minmax");
+              navigate("/projects/minnieandmaxx");
             }}
           >
             Minnie and Maxx
+          </div>
+          <div
+            className={css.projectLink}
+            onClick={() => {
+              navigate("/projects/chordpal");
+            }}
+          >
+            ChordPal
           </div>
         </div>
         <p className={css.description}>
@@ -52,14 +66,70 @@ export default function FrontEndCard(props) {
         </p>
 
         <div className={css.hashTags}>
-          <div className={css.tag}>#JavaScript</div>
-          <div className={css.tag}>#TypeScript</div>
-          <div className={css.tag}>#React</div>
-          <div className={css.tag}>#Three.js</div>
-          <div className={css.tag}>#HTML</div>
-          <div className={css.tag}>#CSS</div>
-          <div className={css.tag}>#Redux</div>
-          <div className={css.tag}>#REST</div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #JavaScript
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #TypeScript
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #React
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Three.js
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #HTML
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #CSS
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Redux
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #REST
+          </div>
         </div>
       </div>
     </>

@@ -3,7 +3,8 @@ import css from "./styles.module.css";
 import myText from "../sample/PortfolioCodeText";
 import { CopyBlock, dracula } from "react-code-blocks";
 import { useNavigate } from "react-router";
-
+import { useDispatch } from "react-redux";
+import { filterProjects, setSearchWord } from "../../../redux/searchSlice";
 export default function PortfolioCard(props) {
   const [display, setDisplay] = React.useState("none");
   const navigate = useNavigate();
@@ -17,6 +18,12 @@ export default function PortfolioCard(props) {
     } else {
       setDisplay("none");
     }
+  };
+  const dispatch = useDispatch();
+  const handlehashTags = (tag) => {
+    dispatch(setSearchWord(tag));
+    dispatch(filterProjects(tag));
+    navigate("/projects");
   };
   return (
     <>
@@ -65,14 +72,70 @@ export default function PortfolioCard(props) {
           </div>
         </div>
         <div className={css.hashTags}>
-          <div className={css.tag}>#FrontEnd</div>
-          <div className={css.tag}>#JavaScript</div>
-          <div className={css.tag}>#React</div>
-          <div className={css.tag}>#Three.js</div>
-          <div className={css.tag}>#HTML</div>
-          <div className={css.tag}>#CSS</div>
-          <div className={css.tag}>#3DAnimation</div>
-          <div className={css.tag}>#Redux</div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #FrontEnd
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #JavaScript
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #React
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Three.js
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #HTML
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #CSS
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #3DAnimation
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Redux
+          </div>
         </div>
       </div>
     </>

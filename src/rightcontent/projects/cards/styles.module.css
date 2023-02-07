@@ -6,7 +6,8 @@
   padding-bottom: 0px !important;
 }
 .title {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  font-family: Roboto;
 }
 .content {
   text-align: left;

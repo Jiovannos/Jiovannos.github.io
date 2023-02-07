@@ -21,7 +21,7 @@ export default function UnderConstructionCard(props) {
         <p className={css.shortDescription}>Coming Soon...</p>
         <p className={css.description}></p>
         <p className={css.description}>
-          Awaitting for the containerization and deployment of the project.
+          Awaitting for the production and deployment of the project.
         </p>
       </div>
     </>

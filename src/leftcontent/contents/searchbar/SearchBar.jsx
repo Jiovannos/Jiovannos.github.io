@@ -3,7 +3,7 @@ import css from "./styles.module.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { rotateContents, setFocus } from "../../../redux/spaceSlice";
-import { filterProjects } from "../../../redux/searchSlice";
+import { filterProjects, setSearchWord } from "../../../redux/searchSlice";
 import { useNavigate } from "react-router";
 import { SlMagnifier } from "react-icons/sl";
 
@@ -12,6 +12,7 @@ export default function SearchBar(props) {
   const searchState = useSelector((state) => state.search);
   const searchWord = searchState.searchWord;
   useEffect(() => {
+    console.log(searchWord);
     setValue(searchWord);
   }, [searchWord]);
   const [value, setValue] = useState("");
@@ -30,15 +31,13 @@ export default function SearchBar(props) {
 
   const handleKeyEnter = (event) => {
     if (event.key === "Enter") {
-      dispatch(filterProjects(value));
+      dispatch(filterProjects(searchWord));
       goToProjects();
     }
   };
 
   const goToProjects = () => {
-    if (value !== "") {
-      navigate("/projects");
-    }
+    navigate("/projects");
   };
   return (
     <div className={css.container}>
@@ -56,7 +55,6 @@ export default function SearchBar(props) {
           className={css.back}
           onClick={goBack}
           onMouseOver={() => {
-            dispatch(rotateContents({ category: "projects", rotation: 0 }));
             dispatch(setFocus({ category: "projects", focused: true }));
           }}
         >
@@ -76,10 +74,9 @@ export default function SearchBar(props) {
         <div
           className={css.link}
           onClick={() => {
-            setValue("React");
-          }}
-          onMouseOver={() => {
-            dispatch(rotateContents({ rotation: "back" }));
+            dispatch(setSearchWord("React"));
+            dispatch(filterProjects(value));
+            goToProjects();
           }}
         >
           #React
@@ -87,7 +84,9 @@ export default function SearchBar(props) {
         <div
           className={css.link}
           onClick={() => {
-            setValue("MongoDB");
+            dispatch(setSearchWord("MongoDB"));
+            dispatch(filterProjects(value));
+            goToProjects();
           }}
         >
           #MongoDB
@@ -95,7 +94,9 @@ export default function SearchBar(props) {
         <div
           className={css.link}
           onClick={() => {
-            setValue("Flask");
+            dispatch(setSearchWord("Flask"));
+            dispatch(filterProjects(value));
+            goToProjects();
           }}
         >
           #Flask
@@ -103,10 +104,12 @@ export default function SearchBar(props) {
         <div
           className={css.link}
           onClick={() => {
-            setValue("Pandas");
+            dispatch(setSearchWord("Redux"));
+            dispatch(filterProjects(value));
+            goToProjects();
           }}
         >
-          #Pandas
+          #Redux
         </div>
       </div>
     </div>
