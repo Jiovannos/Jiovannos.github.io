@@ -38,6 +38,30 @@ export default function FrontEndCard(props) {
           <div
             className={css.projectLink}
             onClick={() => {
+              navigate("/projects/chordpal");
+            }}
+          >
+            ChordPal
+          </div>
+          <div
+            className={css.projectLink}
+            onClick={() => {
+              navigate("/projects/happyjobfinder");
+            }}
+          >
+            Happy Job Finder
+          </div>
+          <div
+            className={css.projectLink}
+            onClick={() => {
+              navigate("/projects/morethanbirthdays");
+            }}
+          >
+            More Than Birthdays
+          </div>
+          <div
+            className={css.projectLink}
+            onClick={() => {
               navigate("/projects/saasplatform");
             }}
           >
@@ -50,14 +74,6 @@ export default function FrontEndCard(props) {
             }}
           >
             Minnie and Maxx
-          </div>
-          <div
-            className={css.projectLink}
-            onClick={() => {
-              navigate("/projects/chordpal");
-            }}
-          >
-            ChordPal
           </div>
         </div>
         <p className={css.description}>

@@ -50,14 +50,14 @@ export default function SQLCard(props) {
             Procurement Analysis
           </div>
 
-          <div
+          {/* <div
             className={css.projectLink}
             onClick={() => {
               navigate("/projects/bigfatdata");
             }}
           >
             Big Fat Data
-          </div>
+          </div> */}
         </div>
         <p className={css.description}>
           Almost half of my applications use SQL as their main database.
@@ -72,14 +72,14 @@ export default function SQLCard(props) {
           >
             #MySQL
           </div>
-          <div
+          {/* <div
             className={css.tag}
             onClick={(e) => {
               handlehashTags(e.target.outerText.slice(1));
             }}
           >
             #SQLite
-          </div>
+          </div> */}
         </div>
       </div>
     </>

@@ -1,9 +1,38 @@
 .title {
-  color: white;
-  font-size: 3rem;
-  text-align: left;
-  letter-spacing: 0.4rem;
-  transform: scale(1, 1.2);
-  font-weight: lighter;
-  margin-top: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Elegant and readable font */
+  font-size: 3rem; /* Larger size for prominence */
+  color: #2980b9; /* Stylish, dark color */
+  text-align: center; /* Center-align the title */
+  margin-top: 2rem; /* Spacing from the top */
+  position: relative;
+  text-shadow: 2px 2px 8px rgba(44, 62, 80, 0.2); /* Subtle text shadow for depth */
+  transition: transform 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.title::before,
+.title::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 50%;
+  background: #2ecc71; /* Green accent line */
+  top: 100%;
+  left: 0;
+  transform: scaleX(0); /* Initial state for the line */
+  transition: transform 0.3s;
+}
+
+.title::after {
+  left: auto;
+  right: 0;
+}
+
+.title:hover {
+  color: #2980b9; /* Change color on hover for interactivity */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.title:hover::before,
+.title:hover::after {
+  transform: scaleX(1); /* Extend the lines on hover */
 }

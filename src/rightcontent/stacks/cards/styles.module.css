@@ -80,16 +80,24 @@
   z-index: 2;
   top: 1%;
   right: 1%;
-  background-color: rgb(231, 76, 37);
-  border-radius: 10%;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Glass effect */
+  border: none;
+  border-radius: 50%; /* Circular shape */
   width: 2rem;
   height: 2rem;
-  font-size: 1.3rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s; /* Zoom effect on hover */
 }
+
 .xButton:hover {
-  background-color: rgb(218, 50, 50);
+  transform: scale(1.1); /* Slightly enlarges on hover */
   cursor: pointer;
 }
+
 .showCode {
   background-color: transparent;
   margin: 0.5rem 0;

@@ -77,8 +77,8 @@ export default function ContantCard(props) {
         <div className={css.section}>
           <AiOutlineMail className={css.icon} />
           {/* <div className={css.lowerTitle}>E-mail:</div> */}
-          <a className={css.link} href={"mailto: jiovanos@gmail.com"}>
-            jiovanos@gmail.com
+          <a className={css.link} href={"mailto: tsolisioann@gmail.com"}>
+            tsolisioann@gmail.com
           </a>
         </div>
         <div className={css.section}>
@@ -109,14 +109,14 @@ export default function ContantCard(props) {
             +30 697 497 85 07
           </a>
         </div>
-        <div className={css.section}>
+        {/* <div className={css.section}>
           <AiOutlineClockCircle className={css.icon} />
           <div>Local Time - {dateFormated}</div>
         </div>
         <div className={css.section}>
           {status[2]}
           <div style={{ color: status[1] }}>{status[0]}</div>
-        </div>
+        </div> */}
       </div>
     </>
   );

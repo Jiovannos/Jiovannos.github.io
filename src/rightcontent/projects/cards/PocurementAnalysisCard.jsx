@@ -48,23 +48,6 @@ export default function PocurementAnalysisCard(props) {
           was trying to solve helped a lot.
         </div>
 
-        <div className={css.showCode} onClick={toggleCode}>
-          Show Sample Code
-        </div>
-        {/* <div className={css.code} style={{ display: display }}>
-          <div className={css.lowerTitle}>Capture_Class.py</div>
-          <div className={css.codeBlock}>
-            <CopyBlock
-              text={myText}
-              language={"python"}
-              showLineNumbers={true}
-              startingLineNumber={1}
-              theme={dracula}
-              codeBlock
-              wrapLines
-            />
-          </div>
-        </div> */}
         <div className={css.hashTags}>
           <div
             className={css.tag}

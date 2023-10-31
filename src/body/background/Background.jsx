@@ -6,14 +6,14 @@ import { DoubleSide } from "three";
 
 export default function Background(props) {
   const ref = useRef();
-  const texture = useLoader(TextureLoader, "/pexels-david-selbert-6468238.jpg");
+  const texture = useLoader(TextureLoader, "/back_3.png");
   texture.repeat.set(1, 1);
 
   return (
-    <mesh {...props} position={[0, 0, -50]} ref={ref}>
+    <mesh {...props} position={[0, 0, -90]} ref={ref}>
       <planeGeometry args={[70, 70]} />
       <meshStandardMaterial
-        color="rgb(70, 64, 60)"
+        color="rgb(80, 80, 80)"
         map={texture}
         metalness={0.2}
         roughness={0.8}

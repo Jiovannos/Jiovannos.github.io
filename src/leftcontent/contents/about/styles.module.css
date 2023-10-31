@@ -11,12 +11,12 @@
   font-size: 1.5rem;
   text-align: left;
   letter-spacing: 0.2rem;
-  font-weight: 100;
+  font-weight: 400;
   opacity: 1;
   text-shadow: rgb(5, 5, 5) 3px 0px 1px;
 }
 .category:hover {
-  text-shadow: rgb(227, 235, 240) 1px 5px 10px;
+  text-shadow: rgb(227, 235, 240) 1px 5px 8px;
   cursor: pointer;
   opacity: 1;
 }
@@ -27,6 +27,6 @@
   margin: 0px;
   text-align: left;
   letter-spacing: 0.2rem;
-  font-weight: 100;
+  font-weight: 300;
   opacity: 1;
 }

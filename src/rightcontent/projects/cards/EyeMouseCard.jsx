@@ -57,7 +57,9 @@ export default function EyeMouseCard(props) {
           frustration. I also had to deal with the fact that the camera was not
           always in the same position, so I had to use calibration to make sure
           that the eye tracking was accurate. Also, something I was not aware
-          before is that eyes flicker when they are looking at the same spot.
+          before is that eyes flicker when they are looking at the same spot, so
+          it was pretty difficult to accurately catch so tiny movements with the
+          webcam.
         </div>
 
         <div className={css.showCode} onClick={toggleCode}>

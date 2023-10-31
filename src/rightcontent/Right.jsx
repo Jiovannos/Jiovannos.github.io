@@ -14,12 +14,15 @@ import ContantCard from "./contact/ContactCard";
 import FrontEndCard from "./stacks/cards/FrontEndCard";
 import BackEndCard from "./stacks/cards/BackEndCard";
 import DataCard from "./stacks/cards/DataCard";
-import PythonCard from "./stacks/cards/JavaScriptCard";
+import PythonCard from "./stacks/cards/PythonCard";
 import JavaScriptCard from "./stacks/cards/JavaScriptCard";
 import SQLCard from "./stacks/cards/SQLCard";
 import NoSQLCard from "./stacks/cards/NoSQLCard";
 import CloudCard from "./stacks/cards/CloudCard";
 import UnderConstructionCard from "./projects/cards/UnderConstructionCard";
+import HappyJobFinderCard from "./projects/cards/HappyJobFinderCard";
+import MoreThanBirthdaysCard from "./projects/cards/MoreThanBirthdays";
+import PocurementAnalysisCard from "./projects/cards/PocurementAnalysisCard";
 
 export default function Right() {
   const spaceState = useSelector((state) => state.space);
@@ -50,6 +53,10 @@ export default function Right() {
             element={<MinnieAndMaxxCard />}
           />
           <Route
+            path="/projects/morethanbirthdays"
+            element={<MoreThanBirthdaysCard />}
+          />
+          <Route
             path="/projects/weighttracker"
             element={<WeightTrackerCard />}
           />
@@ -64,9 +71,13 @@ export default function Right() {
           />
           <Route
             path="/projects/procurementanalysis"
-            element={<UnderConstructionCard />}
+            element={<PocurementAnalysisCard />}
           />
           <Route path="/projects/chordpal" element={<ChordPalCard />} />
+          <Route
+            path="/projects/happyJobFinder"
+            element={<HappyJobFinderCard />}
+          />
           <Route
             path="/projects/bigfatdata"
             element={<UnderConstructionCard />}

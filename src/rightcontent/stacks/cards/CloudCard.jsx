@@ -21,7 +21,9 @@ export default function CloudCard(props) {
           x
         </button>
         <h1 className={css.title}>Cloud</h1>
-        <p className={css.shortDescription}>Docker - Google Cloud Platform</p>
+        <p className={css.shortDescription}>
+          Docker - Amazon Web Services - Google Cloud Platform
+        </p>
         <div className={css.section}>
           <div className={css.lowerTitle}>Projects:</div>
           <div
@@ -49,6 +51,23 @@ export default function CloudCard(props) {
           >
             ChordPal
           </div>
+
+          <div
+            className={css.projectLink}
+            onClick={() => {
+              navigate("/projects/happyjobfinder");
+            }}
+          >
+            Happy Job Finder
+          </div>
+          <div
+            className={css.projectLink}
+            onClick={() => {
+              navigate("/projects/morethanbirthdays");
+            }}
+          >
+            More Than Birthdays
+          </div>
           <div
             className={css.projectLink}
             onClick={() => {
@@ -59,7 +78,7 @@ export default function CloudCard(props) {
           </div>
         </div>
         <p className={css.description}>
-          All the projects are dockerized and deployed on Google Cloud Platform.
+          I have used mostly AWS for hosting. Only 2 apps on GCP.
         </p>
 
         <div className={css.hashTags}>
@@ -78,6 +97,14 @@ export default function CloudCard(props) {
             }}
           >
             #Containers
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #AWS
           </div>
           <div
             className={css.tag}

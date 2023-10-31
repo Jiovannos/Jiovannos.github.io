@@ -44,6 +44,57 @@ export default function Projects(props) {
           dispatch(rotateContents({ category: "projects", rotation: 2 }));
           dispatch(setFocus({ category: "projects", focused: true }));
         }}
+        onMouseLeave={() => {
+          if (window.location.pathname === "/projects")
+            dispatch(setFocus({ category: "projects", focused: false }));
+        }}
+        onClick={() => {
+          navigate("/projects/chordpal");
+        }}
+        style={{ display: visible.chords }}
+      >
+        ChordPal
+      </li>
+      <li
+        className={css.category}
+        onMouseOver={() => {
+          dispatch(rotateContents({ category: "projects", rotation: 3 }));
+          dispatch(setFocus({ category: "projects", focused: true }));
+        }}
+        onMouseLeave={() => {
+          if (window.location.pathname === "/projects")
+            dispatch(setFocus({ category: "projects", focused: false }));
+        }}
+        onClick={() => {
+          navigate("/projects/happyjobfinder");
+        }}
+        style={{ display: visible.happyjobfinder }}
+      >
+        Happy Job Finder
+      </li>
+      <li
+        className={css.category}
+        onMouseOver={() => {
+          dispatch(rotateContents({ category: "projects", rotation: 4 }));
+          dispatch(setFocus({ category: "projects", focused: true }));
+        }}
+        onMouseLeave={() => {
+          if (window.location.pathname === "/projects")
+            dispatch(setFocus({ category: "projects", focused: false }));
+        }}
+        onClick={() => {
+          navigate("/projects/morethanbirthdays");
+        }}
+        style={{ display: visible.happyjobfinder }}
+      >
+        More Than Birthdays
+      </li>
+      <li
+        className={css.category}
+        onMouseOver={() => {
+          dispatch(rotateContents({ category: "projects", rotation: 5 }));
+          dispatch(setFocus({ category: "projects", focused: true }));
+        }}
         onClick={() => {
           navigate("/projects/saasplatform");
         }}
@@ -54,7 +105,7 @@ export default function Projects(props) {
       <li
         className={css.category}
         onMouseOver={() => {
-          dispatch(rotateContents({ category: "projects", rotation: 3 }));
+          dispatch(rotateContents({ category: "projects", rotation: 6 }));
           dispatch(setFocus({ category: "projects", focused: true }));
         }}
         onMouseLeave={() => {
@@ -71,24 +122,7 @@ export default function Projects(props) {
       <li
         className={css.category}
         onMouseOver={() => {
-          dispatch(rotateContents({ category: "projects", rotation: 4 }));
-          dispatch(setFocus({ category: "projects", focused: true }));
-        }}
-        onMouseLeave={() => {
-          if (window.location.pathname === "/projects")
-            dispatch(setFocus({ category: "projects", focused: false }));
-        }}
-        onClick={() => {
-          navigate("/projects/chordpal");
-        }}
-        style={{ display: visible.chords }}
-      >
-        ChordPal
-      </li>
-      <li
-        className={css.category}
-        onMouseOver={() => {
-          dispatch(rotateContents({ category: "projects", rotation: 5 }));
+          dispatch(rotateContents({ category: "projects", rotation: 7 }));
           dispatch(setFocus({ category: "projects", focused: true }));
         }}
         onClick={() => {
@@ -97,32 +131,6 @@ export default function Projects(props) {
         style={{ display: visible.weight }}
       >
         Weight Tracker
-      </li>
-      <li
-        className={css.category}
-        onMouseOver={() => {
-          dispatch(rotateContents({ category: "projects", rotation: 6 }));
-          dispatch(setFocus({ category: "projects", focused: true }));
-        }}
-        onClick={() => {
-          navigate("/projects/eyemouse");
-        }}
-        style={{ display: visible.eyeMouse }}
-      >
-        Eye Mouse
-      </li>
-      <li
-        className={css.category}
-        onMouseOver={() => {
-          dispatch(rotateContents({ category: "projects", rotation: 7 }));
-          dispatch(setFocus({ category: "projects", focused: true }));
-        }}
-        onClick={() => {
-          navigate("/projects/mtgscrapper");
-        }}
-        style={{ display: visible.mtgScrapper }}
-      >
-        Magic Scrapper
       </li>
       <li
         className={css.category}
@@ -141,11 +149,37 @@ export default function Projects(props) {
       >
         Procurement Analysis
       </li>
-
       <li
         className={css.category}
         onMouseOver={() => {
           dispatch(rotateContents({ category: "projects", rotation: 9 }));
+          dispatch(setFocus({ category: "projects", focused: true }));
+        }}
+        onClick={() => {
+          navigate("/projects/eyemouse");
+        }}
+        style={{ display: visible.eyeMouse }}
+      >
+        Eye Mouse
+      </li>
+      {/* <li
+        className={css.category}
+        onMouseOver={() => {
+          dispatch(rotateContents({ category: "projects", rotation: 8 }));
+          dispatch(setFocus({ category: "projects", focused: true }));
+        }}
+        onClick={() => {
+          navigate("/projects/mtgscrapper");
+        }}
+        style={{ display: visible.mtgScrapper }}
+      >
+        Magic Scrapper
+      </li> */}
+
+      <li
+        className={css.category}
+        onMouseOver={() => {
+          dispatch(rotateContents({ category: "projects", rotation: 10 }));
           dispatch(setFocus({ category: "projects", focused: true }));
         }}
         onClick={() => {
@@ -155,7 +189,7 @@ export default function Projects(props) {
       >
         Body Percussion
       </li>
-      <li
+      {/* <li
         className={css.category}
         onMouseOver={() => {
           dispatch(rotateContents({ category: "projects", rotation: 10 }));
@@ -171,7 +205,7 @@ export default function Projects(props) {
         style={{ display: visible.bigFatData }}
       >
         Big Fat Data
-      </li>
+      </li> */}
     </div>
   );
 }

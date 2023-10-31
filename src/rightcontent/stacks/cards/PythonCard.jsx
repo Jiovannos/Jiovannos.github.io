@@ -21,10 +21,10 @@ export default function PythonCard(props) {
         <button className={css.xButton} onClick={closeCard}>
           x
         </button>
-        <h1 className={css.title}>Data</h1>
+        <h1 className={css.title}>Python</h1>
         <p className={css.shortDescription}>
           Backend - Data Engineering - Data Analysis - Data Visualization -
-          Business Logic.
+          Business Logic - Machine Learning.
         </p>
         <div className={css.section}>
           <div className={css.lowerTitle}>Projects:</div>
@@ -77,14 +77,14 @@ export default function PythonCard(props) {
             Procurement Analysis
           </div>
 
-          <div
+          {/* <div
             className={css.projectLink}
             onClick={() => {
               navigate("/projects/bigfatdata");
             }}
           >
             Big Fat Data
-          </div>
+          </div> */}
         </div>
         <p className={css.description}>
           My native language. I think in Python. Whenever there is business

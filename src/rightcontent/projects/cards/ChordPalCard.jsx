@@ -34,39 +34,35 @@ export default function ChordPalCard(props) {
           x
         </button>
         <h1 className={css.title}>ChordPal</h1>
+
         <p className={css.shortDescription}>
           Web Application - JavaScript - MERN (MongoDB - Express.js - React.js
           Node.js)
         </p>
         <div className={css.section}>
           <div className={css.lowerTitle}>Website:</div>
-          <div className={css.link}>Full Content not ready yet</div>
-        </div>
-        <div className={css.section}>
-          <div className={css.lowerTitle}>Preview:</div>
           <a
             className={css.link}
-            href={"https://i.ibb.co/qCzZs0C/ChordPal.png"}
+            href={"http://chord-pal.com"}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
-            ChordPal (Main Screen)
+            chord-pal.com
           </a>
         </div>
 
         <p className={css.description}>
-          A Web Application for musicians to create and share chord
-          progressions, plus algorithmic analysis of what chords may be present
-          on a song.
+          A Web Application for musicians to create and share song chords,
+          lyrics and tabs. Plus algorithmic analysis of what chords may be
+          present on a song and scale helper tools to make editing songs easy.
         </p>
 
         <div className={css.description}>
           <b>Challenges: </b>
-          Most challenges were in business logic, rather than development. A
-          classic CRUD application. The biggest challenge was the algorithmic
-          analysis of chords mostly due to the knowledge I needed to acquire in
-          music theory. Thankfully, as a part-time musician, I was half way
-          there.
+          Most challenges were in business logic, rather than development. The
+          biggest challenge was the algorithmic analysis of chords mostly due to
+          the knowledge I needed to acquire in music theory. Thankfully, as a
+          part-time musician, I was half way there.
         </div>
 
         <div className={css.showCode} onClick={toggleCode}>
@@ -157,7 +153,23 @@ export default function ChordPalCard(props) {
               handlehashTags(e.target.outerText.slice(1));
             }}
           >
-            #REST
+            #GraphQL
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #AWS
+          </div>
+          <div
+            className={css.tag}
+            onClick={(e) => {
+              handlehashTags(e.target.outerText.slice(1));
+            }}
+          >
+            #Docker
           </div>
         </div>
       </div>

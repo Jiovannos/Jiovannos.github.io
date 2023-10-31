@@ -30,6 +30,31 @@ export default function PythonCard(props) {
           <div
             className={css.projectLink}
             onClick={() => {
+              navigate("/projects/chordpal");
+            }}
+          >
+            ChordPal
+          </div>
+
+          <div
+            className={css.projectLink}
+            onClick={() => {
+              navigate("/projects/happyjobfinder");
+            }}
+          >
+            Happy Job Finder
+          </div>
+          <div
+            className={css.projectLink}
+            onClick={() => {
+              navigate("/projects/morethanbirthdays");
+            }}
+          >
+            More Than Birthdays
+          </div>
+          <div
+            className={css.projectLink}
+            onClick={() => {
               navigate("/projects/saasplatform");
             }}
           >
@@ -46,15 +71,6 @@ export default function PythonCard(props) {
           <div
             className={css.projectLink}
             onClick={() => {
-              navigate("/projects/chordpal");
-            }}
-          >
-            ChordPal
-          </div>
-
-          <div
-            className={css.projectLink}
-            onClick={() => {
               navigate("/projects/bodypercussion");
             }}
           >
@@ -64,7 +80,7 @@ export default function PythonCard(props) {
         <p className={css.description}>
           All the Front End happens with JavaScript (or TypeScript). I have used
           vanilla JavaScript at start but later did everything with React in the
-          Front End. Half of hte projects use Express in the Back End. I have
+          Front End. Half of the projects use Express in the Back End. I have
           also worked with Node.js and MongoDB extensively.
         </p>
 
